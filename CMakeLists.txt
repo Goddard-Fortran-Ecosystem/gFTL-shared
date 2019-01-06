@@ -3,27 +3,23 @@ project (pFUnit
   VERSION 3.1.1
   LANGUAGES Fortran)
 
+cmake_policy(SET CMP0076 NEW)
 
-
-#if(COMMAND cmake_policy)
-#  cmake_policy(SET CMP0003 NEW)
-#endif(COMMAND cmake_policy)
-
-set(gFTL "" CACHE PATH "(optional) path to installed gFTL")
+set(GFTL "" CACHE PATH "(optional) path to installed gFTL")
 set(PFUNIT "" CACHE PATH "(optional) path to installed testing framework")
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
 include(${CMAKE_Fortran_COMPILER_ID} RESULT_VARIABLE found)
 include(check_intrinsic_kinds RESULT_VARIABLE found)
 
-if (gFTL)
+if (GFTL)
   set(CMAKE_Fortran_COMPILER ${FC})
   project (FTL Fortran)
 
 #  include(CheckFortranSource)
 #  include(CheckCompilerCapabilities)
 else ()
-  project (FTL NONE)
+  project (GFTL NONE)
 endif()
 
 if (PFUNIT)

@@ -3,7 +3,7 @@ module gFTL_Real128VectorMod
 
 #define _type type(real(kind=REAL128))
 #define _vector Real128Vector
-#define _vectoriterator Real32VectorIterator
+#define _vectoriterator Real128VectorIterator
 #include "templates/vector.inc"
 #undef _vectoriterator
 #undef _vector

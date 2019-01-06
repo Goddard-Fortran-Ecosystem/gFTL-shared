@@ -1,0 +1,18 @@
+module gFTL_Integer64Complex32MapMod
+  use, intrinsic:: iso_fortran_env, only: INT64, REAL32
+
+#define _key type(integer(kind=INT64))
+#define _value type(complex(kind=REAL32))
+#define _map Integer64Complex32Map
+#define _iterator Integer64Complex32MapIterator
+#define _alt
+
+#include "templates/map.inc"
+
+#undef _alt
+#undef _iterator
+#undef _map
+#undef _value
+#undef _key  
+
+end module gFTL_Integer64Complex32MapMod

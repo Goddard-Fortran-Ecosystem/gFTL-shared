@@ -7,8 +7,8 @@ module gFTL_DoubleVectorMod
 
 #elif defined(_ISO_REAL128) && (_DOUBLE_DEAULT_KIND == _ISO_REAL128)
 
-  use gFTL_Double64VectorMod, only: DoubleVector => Real128Vector
-  use gFTL_Double64VectorMod, only: DoubleVectorIterator => Real128VectorIterator
+  use gFTL_Real128VectorMod, only: DoubleVector => Real128Vector
+  use gFTL_Real128VectorMod, only: DoubleVectorIterator => Real128VectorIterator
 
 #else
 

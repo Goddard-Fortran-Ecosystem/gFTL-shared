@@ -1,4 +1,6 @@
-add_library(gFTL-stock
+set(CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/mod)
+
+add_library(gFTL-shared
   # Vector containers
   IntegerVector.F90
   Integer32Vector.F90
@@ -72,14 +74,18 @@ add_library(gFTL-stock
   )
 
 if(_ISO_REAL128)
-  target_sources(gFTL-stock PUBLIC Real128Vector.F90)
-  target_sources(gFTL-stock PUBLIC Complex128Vector.F90)
-  target_sources(gFTL-stock PUBLIC StringReal128Map.F90)
-  target_sources(gFTL-stock PUBLIC StringComplex128Map.F90)
-  target_sources(gFTL-stock PUBLIC Integer32Real128Map.F90)
-  target_sources(gFTL-stock PUBLIC Integer32Complex128Map.F90)
+  target_sources(gFTL-shared PUBLIC Real128Vector.F90)
+  target_sources(gFTL-shared PUBLIC Complex128Vector.F90)
+  target_sources(gFTL-shared PUBLIC StringReal128Map.F90)
+  target_sources(gFTL-shared PUBLIC StringComplex128Map.F90)
+  target_sources(gFTL-shared PUBLIC Integer32Real128Map.F90)
+  target_sources(gFTL-shared PUBLIC Integer32Complex128Map.F90)
 endif()
       
 	
 
-target_include_directories(gFTL-stock PRIVATE ${GFTL}/include)
+target_include_directories(gFTL-shared PRIVATE ${GFTL}/include)
+
+install (TARGETS gFTL-shared DESTINATION lib)
+install (DIRECTORY ${CMAKE_BINARY_DIR}/mod DESTINATION .)
+

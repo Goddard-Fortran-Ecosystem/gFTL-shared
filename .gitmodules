@@ -1,0 +1,3 @@
+[submodule "gFTL"]
+	path = gFTL
+	url = git@github.com:Goddard-Fortran-Ecosystem/gFTL.git

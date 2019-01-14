@@ -85,7 +85,6 @@ endif()
 	
 
 target_include_directories(gFTL-shared PRIVATE ${gftl_install_dir}/include)
-add_dependencies(gFTL-shared gFTL)
 
 install (TARGETS gFTL-shared DESTINATION lib)
 install (DIRECTORY ${CMAKE_BINARY_DIR}/mod DESTINATION .)

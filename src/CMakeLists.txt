@@ -82,8 +82,10 @@ if(_ISO_REAL128)
   target_sources(gFTL-shared PUBLIC Integer32Complex128Map.F90)
 endif()
       
+if (NOT GFTL)
+  add_dependencies(fargparse gFTL)
+endif()
 	
-
 target_include_directories(gFTL-shared PRIVATE ${gftl_install_dir}/include)
 
 install (TARGETS gFTL-shared DESTINATION lib)

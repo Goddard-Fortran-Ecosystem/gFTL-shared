@@ -83,7 +83,7 @@ if(_ISO_REAL128)
 endif()
       
 if (NOT GFTL)
-  add_dependencies(fargparse gFTL)
+  add_dependencies(gFTL-shared gFTL)
 endif()
 	
 target_include_directories(gFTL-shared PRIVATE ${gftl_install_dir}/include)

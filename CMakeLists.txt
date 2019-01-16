@@ -3,7 +3,9 @@ project (gFTL-shared
   VERSION 1.0.0
   LANGUAGES Fortran)
 
-cmake_policy(SET CMP0076 NEW)
+if (POLICY CMP0076)
+  cmake_policy(SET CMP0076 NEW)
+endif()
 
 set(GFTL "" CACHE PATH "Optional path to externally installed FTL package.")
 

@@ -12,7 +12,7 @@ module gFTL_StringDoubleMapMod
 #else
   
  
-#  include "types/key_DeferredLengthString.inc"
+#  include "types/key_deferredLengthString.inc"
 #  define _value type(double precision)
 #  define _map StringDoubleMap
 #  define _iterator StringDoubleMapIterator

@@ -1,7 +1,7 @@
 module gFTL_StringStringMapMod
 
-#include "types/key_DeferredLengthString.inc"
-#include "types/value_DeferredLengthString.inc"
+#include "types/key_deferredLengthString.inc"
+#include "types/value_deferredLengthString.inc"
 
 #define _map StringStringMap
 #define _iterator StringStringMapIterator

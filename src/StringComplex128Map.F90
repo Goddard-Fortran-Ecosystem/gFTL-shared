@@ -1,7 +1,7 @@
 module gFTL_StringComplex128MapMod
   use, intrinsic:: iso_fortran_env, only: REAL128
 
-#include "types/key_DeferredLengthString.inc"
+#include "types/key_deferredLengthString.inc"
 #define _value type(complex(kind=REAL128))
 #define _map StringComplex128Map
 #define _iterator StringComplex128MapIterator

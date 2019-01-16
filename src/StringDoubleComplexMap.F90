@@ -12,7 +12,7 @@ module gFTL_StringDoubleComplexMapMod
 #else
   
  
-#  include "types/key_DeferredLengthString.inc"
+#  include "types/key_deferredLengthString.inc"
 #  define _value type(double complex)
 #  define _map StringDoubleComplexMap
 #  define _iterator StringDoubleComplexMapIterator

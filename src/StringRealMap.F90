@@ -12,7 +12,7 @@ module gFTL_StringRealMapMod
 
 #else
    
-#  include "types/key_DeferredLengthString.inc"
+#  include "types/key_deferredLengthString.inc"
 #  define _value type(real)
 #  define _map StringRealMap
 #  define _iterator StringRealMapIterator

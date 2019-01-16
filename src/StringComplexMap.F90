@@ -13,7 +13,7 @@ module gFTL_StringComplexMapMod
 #else
   
  
-#  include "types/key_DeferredLengthString.inc"
+#  include "types/key_deferredLengthString.inc"
 #  define _value type(complex)
 #  define _map StringComplexMap
 #  define _iterator StringComplexMapIterator

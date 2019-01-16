@@ -1,7 +1,7 @@
 module gFTL_StringComplex32MapMod
   use, intrinsic:: iso_fortran_env, only: REAL32
 
-#include "types/key_DeferredLengthString.inc"
+#include "types/key_deferredLengthString.inc"
 #define _value type(complex(kind=REAL32))
 #define _map StringComplex32Map
 #define _iterator StringComplex32MapIterator

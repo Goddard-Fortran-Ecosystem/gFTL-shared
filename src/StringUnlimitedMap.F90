@@ -1,6 +1,6 @@
 module gFTL_StringUnlimitedMapMod
 
-#include "types/key_DeferredLengthString.inc"
+#include "types/key_deferredLengthString.inc"
 #include "types/value_unlimitedPoly.inc"
 
 #define _map StringUnlimitedMap

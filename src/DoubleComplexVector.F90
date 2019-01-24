@@ -1,14 +1,14 @@
-module gFTL_DoubleComplexVectorMod
+module gFTL_DoubleComplexVector
 
 #if _DOUBLE_DEAULT_KIND == _ISO_REAL64
 
-  use gFTL_DoubleComplex64VectorMod, only: DoubleComplexVector => Complex64Vector
-  use gFTL_DoubleComplex64VectorMod, only: DoubleComplexVectorIterator => Complex64VectorIterator
+  use gFTL_DoubleComplex64Vector, only: DoubleComplexVector => Complex64Vector
+  use gFTL_DoubleComplex64Vector, only: DoubleComplexVectorIterator => Complex64VectorIterator
 
 #elif defined(_ISO_REAL128) && (_DOUBLE_DEAULT_KIND == _ISO_REAL128)
 
-  use gFTL_DoubleComplex64VectorMod, only: DoubleComplexVector => ComplexVector
-  use gFTL_DoubleComplex64VectorMod, only: DoubleComplexVectorIterator => Complex128VectorIterator
+  use gFTL_DoubleComplex64Vector, only: DoubleComplexVector => ComplexVector
+  use gFTL_DoubleComplex64Vector, only: DoubleComplexVectorIterator => Complex128VectorIterator
 
 #else
 
@@ -22,4 +22,4 @@ module gFTL_DoubleComplexVectorMod
 
 #endif
   
-end module gFTL_DoubleComplexVectorMod
+end module gFTL_DoubleComplexVector

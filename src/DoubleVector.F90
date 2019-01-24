@@ -1,14 +1,14 @@
-module gFTL_DoubleVectorMod
+module gFTL_DoubleVector
 
 #if _DOUBLE_DEAULT_KIND == _ISO_REAL64
 
-  use gFTL_Double64VectorMod, only: DoubleVector => Real64Vector
-  use gFTL_Double64VectorMod, only: DoubleVectorIterator => Real64VectorIterator
+  use gFTL_Double64Vector, only: DoubleVector => Real64Vector
+  use gFTL_Double64Vector, only: DoubleVectorIterator => Real64VectorIterator
 
 #elif defined(_ISO_REAL128) && (_DOUBLE_DEAULT_KIND == _ISO_REAL128)
 
-  use gFTL_Real128VectorMod, only: DoubleVector => Real128Vector
-  use gFTL_Real128VectorMod, only: DoubleVectorIterator => Real128VectorIterator
+  use gFTL_Real128Vector, only: DoubleVector => Real128Vector
+  use gFTL_Real128Vector, only: DoubleVectorIterator => Real128VectorIterator
 
 #else
 
@@ -22,4 +22,4 @@ module gFTL_DoubleVectorMod
 
 #endif
   
-end module gFTL_DoubleVectorMod
+end module gFTL_DoubleVector

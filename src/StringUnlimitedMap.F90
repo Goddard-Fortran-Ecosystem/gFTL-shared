@@ -1,4 +1,4 @@
-module gFTL_StringUnlimitedMapMod
+module gFTL_StringUnlimitedMap
 
 #include "types/key_deferredLengthString.inc"
 #include "types/value_unlimitedPoly.inc"
@@ -15,4 +15,4 @@ module gFTL_StringUnlimitedMapMod
 #undef _value
 #undef _key  
 
-end module gFTL_StringUnlimitedMapMod
+end module gFTL_StringUnlimitedMap

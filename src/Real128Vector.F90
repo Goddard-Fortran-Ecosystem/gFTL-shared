@@ -1,4 +1,4 @@
-module gFTL_Real128VectorMod
+module gFTL_Real128Vector
   use, intrinsic :: iso_fortran_env, only: REAL128
 
 #define _type type(real(kind=REAL128))
@@ -9,4 +9,4 @@ module gFTL_Real128VectorMod
 #undef _vector
 #undef _type
   
-end module gFTL_Real128VectorMod
+end module gFTL_Real128Vector

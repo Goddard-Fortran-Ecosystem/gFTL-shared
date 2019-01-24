@@ -1,14 +1,14 @@
-module gFTL_Integer32ComplexMapMod
+module gFTL_Integer32ComplexMap
 
 #if _REAL_DEAULT_KIND == _ISO_REAL32
 
-  use gFTL_Integer32Complex32MapMod, only: Integer32ComplexMap => Integer32Complex32Map
-  use gFTL_Integer32Complex32MapMod, only: Integer32ComplexMapIterator => Integer32Complex32MapIterator
+  use gFTL_Integer32Complex32Map, only: Integer32ComplexMap => Integer32Complex32Map
+  use gFTL_Integer32Complex32Map, only: Integer32ComplexMapIterator => Integer32Complex32MapIterator
 
 #elif _REAL_DEAULT_KIND == _ISO_REAL64
 
-  use gFTL_Integer32Complex64MapMod, only: Integer32ComplexMap => Integer32Complex64Map
-  use gFTL_Integer32Complex64MapMod, only: Integer32ComplexMapIterator => Integer32Complex64MapIterator
+  use gFTL_Integer32Complex64Map, only: Integer32ComplexMap => Integer32Complex64Map
+  use gFTL_Integer32Complex64Map, only: Integer32ComplexMapIterator => Integer32Complex64MapIterator
 
 #else
 
@@ -30,4 +30,4 @@ module gFTL_Integer32ComplexMapMod
 
 #endif
 
-end module gFTL_Integer32ComplexMapMod
+end module gFTL_Integer32ComplexMap

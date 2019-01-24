@@ -1,4 +1,4 @@
-module gFTL_Integer64VectorMod
+module gFTL_Integer64Vector
   use, intrinsic :: iso_fortran_env, only: INT64
 
 #define _type type(integer(kind=INT64))
@@ -9,4 +9,4 @@ module gFTL_Integer64VectorMod
 #undef _vector
 #undef _type
   
-end module gFTL_Integer64VectorMod
+end module gFTL_Integer64Vector

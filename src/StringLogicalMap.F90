@@ -1,4 +1,4 @@
-module gFTL_StringLogicalMapMod
+module gFTL_StringLogicalMap
 
 #include "types/key_deferredLengthString.inc"
 #define _value type(logical)
@@ -14,4 +14,4 @@ module gFTL_StringLogicalMapMod
 #undef _value
 #undef _key  
 
-end module gFTL_StringLogicalMapMod
+end module gFTL_StringLogicalMap

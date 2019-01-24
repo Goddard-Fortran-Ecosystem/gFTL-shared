@@ -1,14 +1,14 @@
-module gFTL_StringComplexMapMod
+module gFTL_StringComplexMap
 
 #if _REAL_DEAULT_KIND == _ISO_REAL32
 
-  use gFTL_StringComplex32MapMod, only: StringComplexMap => StringComplex32Map
-  use gFTL_StringComplex32MapMod, only: StringComplexMapIterator => StringComplex32MapIterator
+  use gFTL_StringComplex32Map, only: StringComplexMap => StringComplex32Map
+  use gFTL_StringComplex32Map, only: StringComplexMapIterator => StringComplex32MapIterator
 
 #elif _REAL_DEAULT_KIND == _ISO_REAL64
 
-  use gFTL_StringComplex64MapMod, only: StringComplexMap => StringComplex64Map
-  use gFTL_StringComplex64MapMod, only: StringComplexMapIterator => StringComplex64MapIterator
+  use gFTL_StringComplex64Map, only: StringComplexMap => StringComplex64Map
+  use gFTL_StringComplex64Map, only: StringComplexMapIterator => StringComplex64MapIterator
 
 #else
   
@@ -29,4 +29,4 @@ module gFTL_StringComplexMapMod
 
 #endif
 
-end module gFTL_StringComplexMapMod
+end module gFTL_StringComplexMap

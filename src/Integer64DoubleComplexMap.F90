@@ -1,14 +1,14 @@
-module gFTL_Integer64DoubleComplexMapMod
+module gFTL_Integer64DoubleComplexMap
 
 #if _DOUBLE_DEAULT_KIND == _ISO_REAL64
 
-  use gFTL_Integer64Complex64MapMod, only: Integer64DoubleComplexMap => Integer64Complex64Map
-  use gFTL_Integer64Complex64MapMod, only: Integer64DoubleComplexMapIterator => Integer64Complex64MapIterator
+  use gFTL_Integer64Complex64Map, only: Integer64DoubleComplexMap => Integer64Complex64Map
+  use gFTL_Integer64Complex64Map, only: Integer64DoubleComplexMapIterator => Integer64Complex64MapIterator
 
 #elif _DOUBLE_DEAULT_KIND == _ISO_REAL128
 
-  use gFTL_Integer64Complex128MapMod, only: Integer64DoubleComplexMap => Integer64Complex128Map
-  use gFTL_Integer64Complex128MapMod, only: Integer64DoubleComplexMapIterator => Integer64Complex128MapIterator
+  use gFTL_Integer64Complex128Map, only: Integer64DoubleComplexMap => Integer64Complex128Map
+  use gFTL_Integer64Complex128Map, only: Integer64DoubleComplexMapIterator => Integer64Complex128MapIterator
 
 #else
 
@@ -30,4 +30,4 @@ module gFTL_Integer64DoubleComplexMapMod
 
 #endif
 
-end module gFTL_Integer64DoubleComplexMapMod
+end module gFTL_Integer64DoubleComplexMap

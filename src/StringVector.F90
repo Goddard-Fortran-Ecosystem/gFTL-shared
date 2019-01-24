@@ -1,4 +1,4 @@
-module gFTL_StringVectorMod
+module gFTL_StringVector
 
 #  include "types/deferredLengthString.inc"
 #define _vector StringVector
@@ -8,4 +8,4 @@ module gFTL_StringVectorMod
 #undef _vector
 #undef _type
 
-end module gFTL_StringVectorMod
+end module gFTL_StringVector

@@ -1,4 +1,4 @@
-module gFTL_Real32VectorMod
+module gFTL_Real32Vector
   use, intrinsic :: iso_fortran_env, only: REAL32
 
 #define _type type(real(kind=REAL32))
@@ -9,4 +9,4 @@ module gFTL_Real32VectorMod
 #undef _vector
 #undef _type
   
-end module gFTL_Real32VectorMod
+end module gFTL_Real32Vector

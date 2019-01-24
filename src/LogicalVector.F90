@@ -1,4 +1,4 @@
-module gFTL_LogicalVectorMod
+module gFTL_LogicalVector
 
 #define _type type(logical)
 #define _vector LogicalVector
@@ -8,4 +8,4 @@ module gFTL_LogicalVectorMod
 #undef _vector
 #undef _type
 
-end module gFTL_LogicalVectorMod
+end module gFTL_LogicalVector

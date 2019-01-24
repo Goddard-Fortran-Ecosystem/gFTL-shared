@@ -1,4 +1,4 @@
-module gFTL_StringStringMapMod
+module gFTL_StringStringMap
 
 #include "types/key_deferredLengthString.inc"
 #include "types/value_deferredLengthString.inc"
@@ -15,4 +15,4 @@ module gFTL_StringStringMapMod
 #undef _value
 #undef _key  
 
-end module gFTL_StringStringMapMod
+end module gFTL_StringStringMap

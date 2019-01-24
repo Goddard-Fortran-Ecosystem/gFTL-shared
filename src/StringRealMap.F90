@@ -1,14 +1,14 @@
-module gFTL_StringRealMapMod
+module gFTL_StringRealMap
 
 #if _REAL_DEAULT_KIND == _ISO_REAL32
 
-  use gFTL_StringReal32MapMod, only: StringRealMap => StringReal32Map
-  use gFTL_StringReal32MapMod, only: StringRealMapIterator => StringReal32MapIterator
+  use gFTL_StringReal32Map, only: StringRealMap => StringReal32Map
+  use gFTL_StringReal32Map, only: StringRealMapIterator => StringReal32MapIterator
 
 #elif _REAL_DEAULT_KIND == _ISO_REAL64
 
-  use gFTL_StringReal64MapMod, only: StringRealMap => StringReal64Map
-  use gFTL_StringReal64MapMod, only: StringRealMapIterator => StringReal64MapIterator
+  use gFTL_StringReal64Map, only: StringRealMap => StringReal64Map
+  use gFTL_StringReal64Map, only: StringRealMapIterator => StringReal64MapIterator
 
 #else
    
@@ -28,4 +28,4 @@ module gFTL_StringRealMapMod
 
 #endif
 
-end module gFTL_StringRealMapMod
+end module gFTL_StringRealMap

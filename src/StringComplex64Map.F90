@@ -1,4 +1,4 @@
-module gFTL_StringComplex64MapMod
+module gFTL_StringComplex64Map
   use, intrinsic:: iso_fortran_env, only: REAL64
 
 #include "types/key_deferredLengthString.inc"
@@ -15,4 +15,4 @@ module gFTL_StringComplex64MapMod
 #undef _value
 #undef _key  
 
-end module gFTL_StringComplex64MapMod
+end module gFTL_StringComplex64Map

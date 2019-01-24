@@ -1,4 +1,4 @@
-module gFTL_Integer32Integer64MapMod
+module gFTL_Integer32Integer64Map
   use, intrinsic:: iso_fortran_env, only: INT32, INT64
 
 #define _key type(integer(kind=INT32))
@@ -15,4 +15,4 @@ module gFTL_Integer32Integer64MapMod
 #undef _value
 #undef _key  
 
-end module gFTL_Integer32Integer64MapMod
+end module gFTL_Integer32Integer64Map

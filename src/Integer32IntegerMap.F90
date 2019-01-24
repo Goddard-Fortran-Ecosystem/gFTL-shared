@@ -1,14 +1,14 @@
-module gFTL_Integer32IntegerMapMod
+module gFTL_Integer32IntegerMap
 
 #if _INT_DEAULT_KIND == _ISO_INT32
 
-  use gFTL_Integer32Integer32MapMod, only: Integer32IntegerMap => Integer32Integer32Map
-  use gFTL_Integer32Integer32MapMod, only: Integer32IntegerMapIterator => Integer32Integer32MapIterator
+  use gFTL_Integer32Integer32Map, only: Integer32IntegerMap => Integer32Integer32Map
+  use gFTL_Integer32Integer32Map, only: Integer32IntegerMapIterator => Integer32Integer32MapIterator
 
 #elif _INT_DEAULT_KIND == _ISO_INT64
 
-  use gFTL_Integer32Integer64MapMod, only: Integer32IntegerMap => Integer32Integer64Map
-  use gFTL_Integer32Integer64MapMod, only: Integer32IntegerMapIterator => Integer32Integer64MapIterator
+  use gFTL_Integer32Integer64Map, only: Integer32IntegerMap => Integer32Integer64Map
+  use gFTL_Integer32Integer64Map, only: Integer32IntegerMapIterator => Integer32Integer64MapIterator
 
 #else
 
@@ -30,4 +30,4 @@ module gFTL_Integer32IntegerMapMod
 
 #endif
 
-end module gFTL_Integer32IntegerMapMod
+end module gFTL_Integer32IntegerMap

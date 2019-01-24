@@ -1,14 +1,14 @@
-module gFTL_IntegerUnlimitedMapMod
+module gFTL_IntegerUnlimitedMap
 
 #if _INT_DEAULT_KIND == _ISO_INT32
 
-  use gFTL_Integer32UnlimitedMapMod, only: IntegerUnlimitedMap => Integer32UnlimitedMap
-  use gFTL_Integer32UnlimitedMapMod, only: IntegerUnlimitedMapIterator => Integer32UnlimitedMapIterator
+  use gFTL_Integer32UnlimitedMap, only: IntegerUnlimitedMap => Integer32UnlimitedMap
+  use gFTL_Integer32UnlimitedMap, only: IntegerUnlimitedMapIterator => Integer32UnlimitedMapIterator
 
 #elif _INT_DEAULT_KIND == _ISO_INT64
 
-  use gFTL_Integer64UnlimitedMapMod, only: IntegerUnlimitedMap => Integer64UnlimitedMap
-  use gFTL_Integer64UnlimitedMapMod, only: IntegerUnlimitedMapIterator => Integer64UnlimitedMapIterator
+  use gFTL_Integer64UnlimitedMap, only: IntegerUnlimitedMap => Integer64UnlimitedMap
+  use gFTL_Integer64UnlimitedMap, only: IntegerUnlimitedMapIterator => Integer64UnlimitedMapIterator
 
 #else
 
@@ -29,4 +29,4 @@ module gFTL_IntegerUnlimitedMapMod
 
 #endif
 
-end module gFTL_IntegerUnlimitedMapMod
+end module gFTL_IntegerUnlimitedMap

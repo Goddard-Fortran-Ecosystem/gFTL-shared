@@ -1,4 +1,4 @@
-module gFTL_Complex32VectorMod
+module gFTL_Complex32Vector
   use, intrinsic :: iso_fortran_env, only: REAL32
 
 #define _type type(complex(kind=REAL32))
@@ -9,4 +9,4 @@ module gFTL_Complex32VectorMod
 #undef _vector
 #undef _type
   
-end module gFTL_Complex32VectorMod
+end module gFTL_Complex32Vector

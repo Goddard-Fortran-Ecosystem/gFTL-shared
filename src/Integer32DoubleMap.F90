@@ -1,14 +1,14 @@
-module gFTL_Integer32DoubleMapMod
+module gFTL_Integer32DoubleMap
 
 #if _DOUBLE_DEAULT_KIND == _ISO_REAL64
 
-  use gFTL_Integer32Real64MapMod, only: Integer32DoubleMap => Integer32Real64Map
-  use gFTL_Integer32Real64MapMod, only: Integer32DoubleMapIterator => Integer32Real64MapIterator
+  use gFTL_Integer32Real64Map, only: Integer32DoubleMap => Integer32Real64Map
+  use gFTL_Integer32Real64Map, only: Integer32DoubleMapIterator => Integer32Real64MapIterator
 
 #elif _DOUBLE_DEAULT_KIND == _ISO_REAL128
 
-  use gFTL_Integer32Real128MapMod, only: Integer32DoubleMap => Integer32Real128Map
-  use gFTL_Integer32Real128MapMod, only: Integer32DoubleMapIterator => Integer32Real128MapIterator
+  use gFTL_Integer32Real128Map, only: Integer32DoubleMap => Integer32Real128Map
+  use gFTL_Integer32Real128Map, only: Integer32DoubleMapIterator => Integer32Real128MapIterator
 
 #else
 
@@ -30,4 +30,4 @@ module gFTL_Integer32DoubleMapMod
 
 #endif
 
-end module gFTL_Integer32DoubleMapMod
+end module gFTL_Integer32DoubleMap

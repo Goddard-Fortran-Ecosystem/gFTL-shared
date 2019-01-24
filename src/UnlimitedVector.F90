@@ -1,4 +1,4 @@
-module gFTL_UnlimitedVectorMod
+module gFTL_UnlimitedVector
 
 #  include "types/unlimitedPoly.inc"
 #define _vector UnlimitedVector
@@ -8,4 +8,4 @@ module gFTL_UnlimitedVectorMod
 #undef _vector
 #undef _type
 
-end module gFTL_UnlimitedVectorMod
+end module gFTL_UnlimitedVector

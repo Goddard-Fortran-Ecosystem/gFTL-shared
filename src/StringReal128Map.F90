@@ -1,4 +1,4 @@
-module gFTL_StringReal128MapMod
+module gFTL_StringReal128Map
   use, intrinsic:: iso_fortran_env, only: REAL128
 
 #include "types/key_deferredLengthString.inc"
@@ -15,4 +15,4 @@ module gFTL_StringReal128MapMod
 #undef _value
 #undef _key  
 
-end module gFTL_StringReal128MapMod
+end module gFTL_StringReal128Map

@@ -5,14 +5,14 @@ module gFTL_DoubleComplexVector
   use gFTL_DoubleComplex64Vector, only: DoubleComplexVector => Complex64Vector
   use gFTL_DoubleComplex64Vector, only: DoubleComplexVectorIterator => Complex64VectorIterator
 
-#elif defined(_ISO_REAL128) && (_DOUBLE_DEAULT_KIND == _ISO_REAL128)
+#elif defined(_ISO_REAL128) && (_DOUBLE_DEFAULT_KIND == _ISO_REAL128)
 
   use gFTL_DoubleComplex64Vector, only: DoubleComplexVector => ComplexVector
   use gFTL_DoubleComplex64Vector, only: DoubleComplexVectorIterator => Complex128VectorIterator
 
 #else
 
-#  define _type type(double complex)
+#  define _type type(complex(kind=kind(0.d0)))
 #  define _vector DoubleComplexVector
 #  define _vectoriterator DoubleComplexVectorIterator
 #  include "templates/vector.inc"

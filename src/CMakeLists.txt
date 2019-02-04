@@ -82,11 +82,7 @@ if(_ISO_REAL128)
   target_sources(gFTL-shared PUBLIC Integer32Complex128Map.F90)
 endif()
       
-if (NOT GFTL)
-  add_dependencies(gFTL-shared gFTL)
-endif()
-	
-target_include_directories(gFTL-shared PRIVATE ${gftl_install_dir}/include)
+target_include_directories(gFTL-shared PRIVATE ${gFTL_INCLUDE_DIRS})
 
 install (TARGETS gFTL-shared DESTINATION lib)
 install (DIRECTORY ${CMAKE_BINARY_DIR}/mod DESTINATION .)

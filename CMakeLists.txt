@@ -7,46 +7,37 @@ if (POLICY CMP0076)
   cmake_policy(SET CMP0076 NEW)
 endif()
 
-set(GFTL "" CACHE PATH "Optional path to externally installed FTL package.")
+set(gFTL "" CACHE PATH "Optional path to externally installed FTL package.")
 
-if (GFTL) # use default
-  set(gftl_install_dir ${GFTL})
+if (gFTL) # use default
+  set(gFTL_INCLUDE_DIRS ${gFTL}/include)
 else()
-  set(gftl_source_dir ${CMAKE_CURRENT_SOURCE_DIR}/gFTL)
-  set(gftl_install_dir ${CMAKE_CURRENT_BINARY_DIR}/gFTL/install)
-
-  include(${CMAKE_ROOT}/Modules/ExternalProject.cmake)
-  file(GLOB all_files ${gftl_source_dir}/*)
-  list(LENGTH all_files n_files)
-
-  if(n_files LESS_EQUAL 3)
-    # git clone command did not use --recurse-submodules
-    set(repository https://github.com/Goddard-Fortran-Ecosystem/gFTL.git)
-    set(download_command git submodule init)
-    set(update_command git submodule update)
-  else()
-    set(repository "")
-    set(download_command "")
-    set(update_command "")
+  # from https://cliutils.gitlab.io/modern-cmake/chapters/projects/submodule.html
+  find_package(Git QUIET)
+  if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
+    option(GIT_SUBMODULE "Check submodules during build" ON)
+    if(GIT_SUBMODULE)
+      message(STATUS "Submodule update")
+      execute_process(
+	COMMAND ${GIT_EXECUTABLE} submodule update --init --recursive
+	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+	RESULT_VARIABLE GIT_SUBMODULE_RESULT
+	)
+      if (NOT GIT_SUBMODULE_RESULT EQUAL "0")
+	message(FATAL_ERROR "git submodule update --init failed with ${GIT_SUBMODULE_RESULT}, please checkout submodules")
+      endif()
+    endif()
   endif()
-
-  ExternalProject_Add(gFTL
-    GIT_REPOSITORY ${repository}
-    DOWNLOAD_COMMAND ${download_command}
-    UPDATE_COMMAND ${update_command}
-    PREFIX ${CMAKE_CURRENT_BINARY_DIR}/gFTL
-    SOURCE_DIR ${gftl_source_dir}
-    INSTALL_DIR ${gftl_install_dir}
-    BUILD_COMMAND make
-    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${gftl_install_dir}  -DCMAKE_INSTALL_MESSAGE=LAZY
-    INSTALL_COMMAND make install)
-
+  if(NOT EXISTS "${PROJECT_SOURCE_DIR}/extern/gFTL/CMakeLists.txt")
+    message(FATAL_ERROR  "The submodules were not downloaded! GIT_SUBMODULE was turned off or failed. Please update submodules and try again.")
+  endif()
+  add_subdirectory(extern/gFTL)
+  set(gFTL_INCLUDE_DIRS ${CMAKE_BINARY_DIR}/extern/gFTL/include ${CMAKE_SOURCE_DIR}/extern/gFTL/include)
 endif()
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
 include(${CMAKE_Fortran_COMPILER_ID} RESULT_VARIABLE found)
 include(check_intrinsic_kinds RESULT_VARIABLE found)
-
 
 add_subdirectory(src)
 

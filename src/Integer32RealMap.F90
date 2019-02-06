@@ -16,8 +16,8 @@ module gFTL_Integer32RealMap
  
 #  define _key type(integer(kind=INT32))
 #  define _value type(real)
-#  define _map IntegerRealMap
-#  define _iterator IntegerRealMapIterator
+#  define _map Integer32RealMap
+#  define _iterator Integer32RealMapIterator
 #  define _alt
 
 #  include "templates/map.inc"

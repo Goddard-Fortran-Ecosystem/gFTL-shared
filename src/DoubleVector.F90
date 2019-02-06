@@ -1,11 +1,11 @@
 module gFTL_DoubleVector
 
-#if _DOUBLE_DEFAULT_KIND_IS_REAL64
+#ifdef _DOUBLE_DEFAULT_KIND_IS_REAL64
 
   use gFTL_Real64Vector, only: DoubleVector => Real64Vector
   use gFTL_Real64Vector, only: DoubleVectorIterator => Real64VectorIterator
 
-#elif defined(_ISO_REAL128) && (_DOUBLE_DEFAULT_KIND_IS_REAL128)
+#elif defined (_DOUBLE_DEFAULT_KIND_IS_REAL128)
 
   use gFTL_Real128Vector, only: DoubleVector => Real128Vector
   use gFTL_Real128Vector, only: DoubleVectorIterator => Real128VectorIterator

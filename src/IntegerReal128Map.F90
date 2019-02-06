@@ -13,9 +13,10 @@ module gFTL_IntegerReal128Map
 
 #else
 
-   use, intrinsic :: iso_fortran_env, only: REAL64
+   use, intrinsic :: iso_fortran_env, only: REAL128
+
 #  define _key type(integer)
-#  define _value type(real(kind=REAL64))
+#  define _value type(real(kind=REAL128))
 #  define _map IntegerReal128Map
 #  define _iterator IntegerReal128MapIterator
 #  define _alt

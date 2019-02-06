@@ -1,12 +1,12 @@
 module gFTL_IntegerDoubleComplexMap
 
    
-#if _INT_DEAULT_KIND_IS_INT32
+#if _INT_DEFAULT_KIND_IS_INT32
 
    use gFTL_Integer32DoubleComplexMap, only: IntegerDoubleComplexMap => Integer32DoubleComplexMap
    use gFTL_Integer32DoubleComplexMap, only: IntegerDoubleComplexMapIterator => Integer32DoubleComplexMapIterator
 
-#elif _INT_DEAULT_KIND_IS_INT64
+#elif _INT_DEFAULT_KIND_IS_INT64
 
    use gFTL_Integer64DoubleComplexMap, only: IntegerDoubleComplexMap => Integer64DoubleComplexMap
    use gFTL_Integer64DoubleComplexMap, only: IntegerDoubleComplexMapIterator => Integer64DoubleComplexMapIterator

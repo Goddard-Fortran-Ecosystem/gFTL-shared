@@ -1,11 +1,11 @@
 module gFTL_ComplexVector
 
-#if _REAL_DEAULT_KIND == _ISO_REAL32
+#if _REAL_DEFAULT_KIND_IS_REAL32
 
   use gFTL_Complex32Vector, only: ComplexVector => Complex32Vector
   use gFTL_Complex32Vector, only: ComplexVectorIterator => Complex32VectorIterator
 
-#elif _REAL_DEAULT_KIND == _ISO_REAL64
+#elif _REAL_DEFAULT_KIND_IS_REAL64
 
   use gFTL_Complex64Vector, only: ComplexVector => Complex64Vector
   use gFTL_Complex64Vector, only: ComplexVectorIterator => Complex64VectorIterator

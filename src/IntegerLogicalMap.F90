@@ -1,11 +1,11 @@
 module gFTL_IntegerLogicalMap
 
-#if _INT_DEAULT_KIND == _ISO_INT32
+#if _INT_DEFAULT_KIND_IS_INT32
 
   use gFTL_Integer32LogicalMap, only: IntegerLogicalMap => Integer32LogicalMap
   use gFTL_Integer32LogicalMap, only: IntegerLogicalMapIterator => Integer32LogicalMapIterator
 
-#elif _INT_DEAULT_KIND == _ISO_INT64
+#elif _INT_DEFAULT_KIND_IS_INT64
 
   use gFTL_Integer64LogicalMap, only: IntegerLogicalMap => Integer64LogicalMap
   use gFTL_Integer64LogicalMap, only: IntegerLogicalMapIterator => Integer64LogicalMapIterator
@@ -14,8 +14,8 @@ module gFTL_IntegerLogicalMap
 
 #  define _key type(integer)
 #  define _value type(logical)
-#  define _map IntegerStringMap
-#  define _iterator IntegerStringMapIterator
+#  define _map IntegerLogicalMap
+#  define _iterator IntegerLogicalMapIterator
 #  define _alt
 
 #  include "templates/map.inc"

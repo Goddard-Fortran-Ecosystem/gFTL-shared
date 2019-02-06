@@ -3,7 +3,7 @@ module gFTL_Real64Vector
 
 #define _type type(real(kind=REAL64))
 #define _vector Real64Vector
-#define _vectoriterator Real32VectorIterator
+#define _vectoriterator Real64VectorIterator
 #include "templates/vector.inc"
 #undef _vectoriterator
 #undef _vector

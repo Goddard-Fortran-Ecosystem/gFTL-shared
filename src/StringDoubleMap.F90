@@ -1,14 +1,15 @@
 module gFTL_StringDoubleMap
 
-#if _REAL_DEAULT_KIND == _ISO_REAL64
+#ifdef _REAL_DEFAULT_KIND_IS_REAL64
 
   use gFTL_StringDouble64Map, only: StringDoubleMap => StringReal64Map
   use gFTL_StringDouble64Map, only: StringDoubleMapIterator => StringReal64MapIterator
 
-#elif defined(_ISO_REAL128) && (_DOUBLE_DEAULT_KIND == _ISO_REAL128)
+#elif defined(_ISO_REAL128) && defined(_DOUBLE_DEFAULT_KIND_IS_REAL128)
 
   use gFTL_StringDouble128Map, only: StringDoubleMap => StringReal128Map
   use gFTL_StringDouble128Map, only: StringDoubleMapIterator => StringReal128MapIterator
+
 #else
   
  

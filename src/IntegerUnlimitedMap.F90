@@ -1,11 +1,11 @@
 module gFTL_IntegerUnlimitedMap
 
-#if _INT_DEAULT_KIND == _ISO_INT32
+#if _INT_DEFAULT_KIND_IS_INT32
 
   use gFTL_Integer32UnlimitedMap, only: IntegerUnlimitedMap => Integer32UnlimitedMap
   use gFTL_Integer32UnlimitedMap, only: IntegerUnlimitedMapIterator => Integer32UnlimitedMapIterator
 
-#elif _INT_DEAULT_KIND == _ISO_INT64
+#elif _INT_DEFAULT_KIND_IS_INT64
 
   use gFTL_Integer64UnlimitedMap, only: IntegerUnlimitedMap => Integer64UnlimitedMap
   use gFTL_Integer64UnlimitedMap, only: IntegerUnlimitedMapIterator => Integer64UnlimitedMapIterator

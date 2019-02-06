@@ -1,14 +1,14 @@
 module gFTL_DoubleComplexVector
 
-#if _DOUBLE_DEAULT_KIND == _ISO_REAL64
+#if _DOUBLE_DEFAULT_KIND_IS_REAL64
 
-  use gFTL_DoubleComplex64Vector, only: DoubleComplexVector => Complex64Vector
-  use gFTL_DoubleComplex64Vector, only: DoubleComplexVectorIterator => Complex64VectorIterator
+  use gFTL_Complex64Vector, only: DoubleComplexVector => Complex64Vector
+  use gFTL_Complex64Vector, only: DoubleComplexVectorIterator => Complex64VectorIterator
 
-#elif defined(_ISO_REAL128) && (_DOUBLE_DEFAULT_KIND == _ISO_REAL128)
+#elif defined(_ISO_REAL128) && (_DOUBLE_DEFAULT_KIND_IS_REAL128)
 
-  use gFTL_DoubleComplex64Vector, only: DoubleComplexVector => ComplexVector
-  use gFTL_DoubleComplex64Vector, only: DoubleComplexVectorIterator => Complex128VectorIterator
+  use gFTL_Complex64Vector, only: DoubleComplexVector => Complex128Vector
+  use gFTL_Complex64Vector, only: DoubleComplexVectorIterator => Complex128VectorIterator
 
 #else
 

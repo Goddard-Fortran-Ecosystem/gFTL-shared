@@ -1,11 +1,11 @@
 module gFTL_StringRealMap
 
-#if _REAL_DEAULT_KIND == _ISO_REAL32
+#if _REAL_DEFAULT_KIND_IS_REAL32
 
   use gFTL_StringReal32Map, only: StringRealMap => StringReal32Map
   use gFTL_StringReal32Map, only: StringRealMapIterator => StringReal32MapIterator
 
-#elif _REAL_DEAULT_KIND == _ISO_REAL64
+#elif _REAL_DEFAULT_KIND_IS_REAL64
 
   use gFTL_StringReal64Map, only: StringRealMap => StringReal64Map
   use gFTL_StringReal64Map, only: StringRealMapIterator => StringReal64MapIterator

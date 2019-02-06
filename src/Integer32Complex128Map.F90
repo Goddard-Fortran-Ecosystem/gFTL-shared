@@ -2,7 +2,7 @@ module gFTL_Integer32Complex128Map
   use, intrinsic:: iso_fortran_env, only: INT32, REAL128
 
 #define _key type(integer(kind=INT32))
-#define _value type(real(kind=REAL128))
+#define _value type(complex(kind=REAL128))
 #define _map Integer32Complex128Map
 #define _iterator Integer32Complex128MapIterator
 #define _alt

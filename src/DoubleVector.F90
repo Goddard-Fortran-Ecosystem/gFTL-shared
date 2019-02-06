@@ -1,18 +1,18 @@
 module gFTL_DoubleVector
 
-#if _DOUBLE_DEAULT_KIND == _ISO_REAL64
+#if _DOUBLE_DEFAULT_KIND_IS_REAL64
 
-  use gFTL_Double64Vector, only: DoubleVector => Real64Vector
-  use gFTL_Double64Vector, only: DoubleVectorIterator => Real64VectorIterator
+  use gFTL_Real64Vector, only: DoubleVector => Real64Vector
+  use gFTL_Real64Vector, only: DoubleVectorIterator => Real64VectorIterator
 
-#elif defined(_ISO_REAL128) && (_DOUBLE_DEAULT_KIND == _ISO_REAL128)
+#elif defined(_ISO_REAL128) && (_DOUBLE_DEFAULT_KIND_IS_REAL128)
 
   use gFTL_Real128Vector, only: DoubleVector => Real128Vector
   use gFTL_Real128Vector, only: DoubleVectorIterator => Real128VectorIterator
 
 #else
 
-#  define _type type(real)
+#  define _type type(double precision)
 #  define _vector DoubleVector
 #  define _vectoriterator DoubleVectorIterator
 #  include "templates/vector.inc"

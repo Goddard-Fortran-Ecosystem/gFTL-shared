@@ -2,7 +2,6 @@ module gFTL_StringStringMap
 
 #include "types/key_deferredLengthString.inc"
 #include "types/value_deferredLengthString.inc"
-
 #define _map StringStringMap
 #define _iterator StringStringMapIterator
 #define _alt

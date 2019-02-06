@@ -83,7 +83,7 @@ add_library(gFTL-shared
 
 
   IntegerInteger32Map.F90
-  IntegerIntegerMap.F90
+  IntegerInteger64Map.F90
   IntegerIntegerMap.F90
 
   IntegerReal32Map.F90
@@ -144,6 +144,8 @@ if (_ISO_REAL128)
 endif()
 
 target_include_directories(gFTL-shared PUBLIC ${gFTL_INCLUDE_DIRS} ${CMAKE_BINARY_DIR}/mod)
+
+add_dependencies(gFTL-shared template_macros types)
 
 add_executable(demo.x demo.F90)
 target_link_libraries(demo.x gFTL-shared)

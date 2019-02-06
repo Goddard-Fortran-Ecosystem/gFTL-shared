@@ -1,12 +1,12 @@
 module gFTL_IntegerReal64Map
 
    
-#if _INT_DEFAULT_KIND_IS_INT32
+#if defined(_INT_DEFAULT_KIND_IS_INT32)
 
    use gFTL_Integer32Real64Map, only: IntegerReal64Map => Integer32Real64Map
    use gFTL_Integer32Real64Map, only: IntegerReal64MapIterator => Integer32Real64MapIterator
 
-#elif _INT_DEFAULT_KIND_IS_INT64
+#elif defined(_INT_DEFAULT_KIND_IS_INT64)
 
    use gFTL_Integer64Real64Map, only: IntegerReal64Map => Integer64Real64Map
    use gFTL_Integer64Real64Map, only: IntegerReal64MapIterator => Integer64Real64MapIterator
@@ -14,6 +14,7 @@ module gFTL_IntegerReal64Map
 #else
 
    use, intrinsic :: iso_fortran_env, only: REAL64
+
 #  define _key type(integer)
 #  define _value type(real(kind=REAL64))
 #  define _map IntegerReal64Map

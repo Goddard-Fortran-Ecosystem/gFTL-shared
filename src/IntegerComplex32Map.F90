@@ -1,12 +1,12 @@
 module gFTL_IntegerComplex32Map
 
    
-#if _INT_DEAULT_KIND_IS_INT32
+#if defined(_INT_DEFAULT_KIND_IS_INT32)
 
    use gFTL_Integer32Complex32Map, only: IntegerComplex32Map => Integer32Complex32Map
    use gFTL_Integer32Complex32Map, only: IntegerComplex32MapIterator => Integer32Complex32MapIterator
 
-#elif _INT_DEAULT_KIND_IS_INT64
+#elif defined(_INT_DEFAULT_KIND_IS_INT64)
 
    use gFTL_Integer64Complex32Map, only: IntegerComplex32Map => Integer64Complex32Map
    use gFTL_Integer64Complex32Map, only: IntegerComplex32MapIterator => Integer64Complex32MapIterator

@@ -1,14 +1,14 @@
 module gFTL_StringDoubleComplexMap
 
-#ifdef _REAL_DEFAULT_KIND_IS_REAL64
+#if defined(_DOUBLE_DEFAULT_KIND_IS_REAL64)
 
-  use gFTL_StringDoubleComplex64Map, only: StringDoubleComplexMap => StringComplex64Map
-  use gFTL_StringDoubleComplex64Map, only: StringDoubleComplexMapIterator => StringComplex64MapIterator
+  use gFTL_StringComplex64Map, only: StringDoubleComplexMap => StringComplex64Map
+  use gFTL_StringComplex64Map, only: StringDoubleComplexMapIterator => StringComplex64MapIterator
 
-#elif defined(_ISO_REAL128) && defined(_DOUBLE_DEFAULT_KIND_IS_REAL128)
+#elif defined(_DOUBLE_DEFAULT_KIND_IS_REAL128)
 
-  use gFTL_StringDoubleComplex128Map, only: StringDoubleComplexMap => StringComplex128Map
-  use gFTL_StringDoubleComplex128Map, only: StringDoubleComplexMapIterator => StringComplex128MapIterator
+  use gFTL_StringComplex128Map, only: StringDoubleComplexMap => StringComplex128Map
+  use gFTL_StringComplex128Map, only: StringDoubleComplexMapIterator => StringComplex128MapIterator
 
 #else
   

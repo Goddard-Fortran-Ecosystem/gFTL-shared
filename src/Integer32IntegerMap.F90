@@ -1,11 +1,11 @@
 module gFTL_Integer32IntegerMap
 
-#if _INT_DEFAULT_KIND_IS_INT32
+#if defined(_INT_DEFAULT_KIND_IS_INT32)
 
   use gFTL_Integer32Integer32Map, only: Integer32IntegerMap => Integer32Integer32Map
   use gFTL_Integer32Integer32Map, only: Integer32IntegerMapIterator => Integer32Integer32MapIterator
 
-#elif _INT_DEFAULT_KIND_IS_INT64
+#elif defined(_INT_DEFAULT_KIND_IS_INT64)
 
   use gFTL_Integer32Integer64Map, only: Integer32IntegerMap => Integer32Integer64Map
   use gFTL_Integer32Integer64Map, only: Integer32IntegerMapIterator => Integer32Integer64MapIterator
@@ -16,8 +16,8 @@ module gFTL_Integer32IntegerMap
  
 #  define _key type(integer(kind=INT32))
 #  define _value type(integer)
-#  define _map IntegerIntegerMap
-#  define _iterator IntegerIntegerMapIterator
+#  define _map Integer32IntegerMap
+#  define _iterator Integer32IntegerMapIterator
 #  define _alt
 
 #  include "templates/map.inc"

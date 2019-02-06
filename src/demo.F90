@@ -264,7 +264,9 @@ program main
 
    call Integer32Integer32_map%insert(1_INT32, 2_INT32)   
    call Integer32Integer64_map%insert(1_INT32, 2_INT64)   
-   call Integer32Integer_map%insert(1_INT32, 2)   
+   call Integer32Integer_map%insert(1_INT32, 2)
+
+   Integer32Integer_map = Integer32Integer32_map
 
    call Integer32Real32_map%insert(1_INT32, 2._REAL32)    
    call Integer32Real64_map%insert(1_INT32, 2._REAL64)    

@@ -1,16 +1,30 @@
 cmake_minimum_required(VERSION 3.0)
+
+# Most users of this software do not (should not?) have permissions to
+# install in the cmake default of /usr/local (or equiv on other os's).
+# Below, the default is changed to a directory within the build tree
+# unless the user explicitly sets CMAKE_INSTALL_PREFIX in the cache.
+
 project (gFTL-shared
   VERSION 1.0.0
   LANGUAGES Fortran)
+
+if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+    set (CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/installed" CACHE PATH "default install path" FORCE )
+endif()
+
 
 if (POLICY CMP0076)
   cmake_policy(SET CMP0076 NEW)
 endif()
 
-set(gFTL "" CACHE PATH "Optional path to externally installed FTL package.")
+set (gFTL-shared_PACKAGE "gFTL-shared")
 
-if (gFTL) # use default
-  set(gFTL_INCLUDE_DIRS ${gFTL}/include)
+
+set(gFTL_DIR "" CACHE PATH "Optional path to externally installed FTL package.")
+
+if (gFTL_DIR) # use default
+  set(gFTL_INCLUDE_DIRS ${gFTL_DIR}/include)
 else()
   # from https://cliutils.gitlab.io/modern-cmake/chapters/projects/submodule.html
   find_package(Git QUIET)
@@ -28,11 +42,10 @@ else()
       endif()
     endif()
   endif()
-  if(NOT EXISTS "${PROJECT_SOURCE_DIR}/extern/gFTL/CMakeLists.txt")
-    message(FATAL_ERROR  "The submodules were not downloaded! GIT_SUBMODULE was turned off or failed. Please update submodules and try again.")
-  endif()
+
   add_subdirectory(extern/gFTL)
-  set(gFTL_INCLUDE_DIRS ${CMAKE_BINARY_DIR}/extern/gFTL/include ${CMAKE_SOURCE_DIR}/extern/gFTL/include)
+  set(gFTL_INCLUDE_DIRS ${CMAKE_BINARY_DIR}/extern/gFTL/include)
+
 endif()
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
@@ -41,3 +54,4 @@ include(check_intrinsic_kinds RESULT_VARIABLE found)
 
 add_subdirectory(src)
 
+include(CMakeInstallation)

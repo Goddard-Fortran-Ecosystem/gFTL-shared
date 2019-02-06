@@ -1,11 +1,11 @@
 module gFTL_Integer64DoubleMap
 
-#if _DOUBLE_DEFAULT_KIND_IS_REAL64
+#if defined(_DOUBLE_DEFAULT_KIND_IS_REAL64)
 
   use gFTL_Integer64Real64Map, only: Integer64DoubleMap => Integer64Real64Map
   use gFTL_Integer64Real64Map, only: Integer64DoubleMapIterator => Integer64Real64MapIterator
 
-#elif _DOUBLE_DEFAULT_KIND_IS_REAL128
+#elif defined(_DOUBLE_DEFAULT_KIND_IS_REAL128)
 
   use gFTL_Integer64Real128Map, only: Integer64DoubleMap => Integer64Real128Map
   use gFTL_Integer64Real128Map, only: Integer64DoubleMapIterator => Integer64Real128MapIterator

@@ -1,11 +1,11 @@
 module gFTL_StringComplexMap
 
-#if _REAL_DEFAULT_KIND_IS_REAL32
+#if defined(_REAL_DEFAULT_KIND_IS_REAL32)
 
   use gFTL_StringComplex32Map, only: StringComplexMap => StringComplex32Map
   use gFTL_StringComplex32Map, only: StringComplexMapIterator => StringComplex32MapIterator
 
-#elif _REAL_DEFAULT_KIND_IS_REAL64
+#elif defined(_REAL_DEFAULT_KIND_IS_REAL64)
 
   use gFTL_StringComplex64Map, only: StringComplexMap => StringComplex64Map
   use gFTL_StringComplex64Map, only: StringComplexMapIterator => StringComplex64MapIterator

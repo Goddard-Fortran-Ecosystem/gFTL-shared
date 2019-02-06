@@ -1,6 +1,6 @@
 module gFTL_StringDoubleComplexMap
 
-#ifdef _DOUBLE_DEFAULT_KIND_IS_REAL64
+#if defined(_DOUBLE_DEFAULT_KIND_IS_REAL64)
 
   use gFTL_StringComplex64Map, only: StringDoubleComplexMap => StringComplex64Map
   use gFTL_StringComplex64Map, only: StringDoubleComplexMapIterator => StringComplex64MapIterator

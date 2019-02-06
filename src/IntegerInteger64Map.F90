@@ -1,11 +1,11 @@
 module gFTL_IntegerInteger64Map
 
-#if _INT_DEFAULT_KIND_IS_INT32
+#if defined(_INT_DEFAULT_KIND_IS_INT32)
 
   use gFTL_Integer32Integer64Map, only: IntegerInteger64Map => Integer32Integer64Map
   use gFTL_Integer32Integer64Map, only: IntegerInteger64MapIterator => Integer32Integer64MapIterator
 
-#elif _INT_DEFAULT_KIND_IS_INT64
+#elif defined(_INT_DEFAULT_KIND_IS_INT64)
 
   use gFTL_Integer64Integer64Map, only: IntegerInteger64Map => Integer64Integer64Map
   use gFTL_Integer64Integer64Map, only: IntegerInteger64MapIterator => Integer64Integer64MapIterator

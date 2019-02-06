@@ -1,12 +1,12 @@
 module gFTL_IntegerDoubleMap
 
    
-#if _INT_DEFAULT_KIND_IS_INT32
+#if defined(_INT_DEFAULT_KIND_IS_INT32)
 
    use gFTL_Integer32DoubleMap, only: IntegerDoubleMap => Integer32DoubleMap
    use gFTL_Integer32DoubleMap, only: IntegerDoubleMapIterator => Integer32DoubleMapIterator
 
-#elif _INT_DEFAULT_KIND_IS_INT64
+#elif defined(_INT_DEFAULT_KIND_IS_INT64)
 
    use gFTL_Integer64DoubleMap, only: IntegerDoubleMap => Integer64DoubleMap
    use gFTL_Integer64DoubleMap, only: IntegerDoubleMapIterator => Integer64DoubleMapIterator

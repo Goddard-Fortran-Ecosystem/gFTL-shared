@@ -143,13 +143,12 @@ if (_ISO_REAL128)
   endif ()
 endif()
 
-target_include_directories(gFTL-shared PUBLIC ${gFTL_INCLUDE_DIRS} ${CMAKE_BINARY_DIR}/mod)
-
-add_dependencies(gFTL-shared template_macros types)
+target_include_directories(gFTL-shared PUBLIC ${CMAKE_BINARY_DIR}/mod)
+target_link_libraries(gFTL-shared gFTL)
 
 add_executable(demo.x demo.F90)
 target_link_libraries(demo.x gFTL-shared)
 
-install (TARGETS gFTL-shared DESTINATION lib)
+#install (TARGETS gFTL-shared DESTINATION lib)
 install (DIRECTORY ${CMAKE_BINARY_DIR}/mod DESTINATION .)
 

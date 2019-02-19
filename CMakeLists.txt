@@ -18,14 +18,8 @@ if (POLICY CMP0076)
   cmake_policy(SET CMP0076 NEW)
 endif()
 
-set (gFTL-shared_PACKAGE "gFTL-shared")
-
-
-set(gFTL_DIR "" CACHE PATH "Optional path to externally installed FTL package.")
-
-if (gFTL_DIR) # use default
-  set(gFTL_INCLUDE_DIRS ${gFTL_DIR}/include)
-else()
+find_package(gFTL QUIET)
+if (NOT gFTL_FOUND)
   # from https://cliutils.gitlab.io/modern-cmake/chapters/projects/submodule.html
   find_package(Git QUIET)
   if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
@@ -43,8 +37,8 @@ else()
     endif()
   endif()
 
+  message("add_subdirectory")
   add_subdirectory(extern/gFTL)
-  set(gFTL_INCLUDE_DIRS ${CMAKE_BINARY_DIR}/extern/gFTL/include)
 
 endif()
 
@@ -54,4 +48,4 @@ include(check_intrinsic_kinds RESULT_VARIABLE found)
 
 add_subdirectory(src)
 
-include(CMakeInstallation)
+#include(CMakeInstallation)

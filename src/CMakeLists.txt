@@ -143,12 +143,19 @@ if (_ISO_REAL128)
   endif ()
 endif()
 
-target_include_directories(gFTL-shared PUBLIC ${CMAKE_BINARY_DIR}/mod)
-target_link_libraries(gFTL-shared gFTL)
+set (include_dest "mod/gFTL-shared-${gFTL-shared_VERSION_MAJOR}.${gFTL-shared_VERSION_MINOR}")
+set (library_dest "lib/gFTL-shared-${gFTL-shared_VERSION_MAJOR}.${gFTL-shared_VERSION_MINOR}")
 
-add_executable(demo.x demo.F90)
-target_link_libraries(demo.x gFTL-shared)
+target_include_directories (gFTL-shared PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/mod>
+  $<INSTALL_INTERFACE:${include_dest}>
+  )
 
-#install (TARGETS gFTL-shared DESTINATION lib)
-install (DIRECTORY ${CMAKE_BINARY_DIR}/mod DESTINATION .)
+target_link_libraries (gFTL-shared gFTL)
+
+add_executable (demo.x demo.F90)
+target_link_libraries (demo.x gFTL-shared)
+
+install (TARGETS gFTL-shared EXPORT gFTL-shared DESTINATION "${library_dest}")
+install (DIRECTORY ${CMAKE_BINARY_DIR}/mod DESTINATION ${include_dest})
 

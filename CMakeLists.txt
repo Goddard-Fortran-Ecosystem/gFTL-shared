@@ -48,4 +48,7 @@ include(check_intrinsic_kinds RESULT_VARIABLE found)
 
 add_subdirectory(src)
 
-#include(CMakeInstallation)
+configure_file(gFTL-shared-config-version.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/gFTL-shared-config-version.cmake @ONLY)
+configure_file(gFTL-shared-config.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/gFTL-shared-config.cmake @ONLY)
+install (FILES ${CMAKE_CURRENT_BINARY_DIR}/gFTL-shared-config.cmake ${CMAKE_CURRENT_BINARY_DIR}/gFTL-shared-config-version.cmake DESTINATION "share/gFTL-shared-${gFTL-shared_VERSION_MAJOR}.${gFTL-shared_VERSION_MINOR}")
+

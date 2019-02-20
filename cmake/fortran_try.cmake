@@ -2,7 +2,7 @@ macro (CHECK_FORTRAN_SOURCE_RUN file var)
 
   try_run (
     run compile
-    ${CMAKE_BINARY_DIR}
+    ${CMAKE_CURRENT_BINARY_DIR}
     ${file}
     CMAKE_FLAGS "-DCOMPILE_DEFINITIONS=${CMAKE_REQUIRED_DEFINITIONS}"
     RUN_OUTPUT_VARIABLE ${var}
@@ -32,7 +32,7 @@ macro (CHECK_FORTRAN_SOURCE_COMPILE file var)
 
   try_compile (
     code_compiles
-    ${CMAKE_BINARY_DIR}
+    ${CMAKE_CURRENT_BINARY_DIR}
     ${file}
     CMAKE_FLAGS "-DCOMPILE_DEFINITIONS=${CMAKE_REQUIRED_DEFINITIONS}"
     )

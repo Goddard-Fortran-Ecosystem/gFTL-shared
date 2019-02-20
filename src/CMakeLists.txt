@@ -1,6 +1,6 @@
 set(CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/mod)
 
-add_library(gFTL-shared
+add_library(gftl-shared
   # Vector containers
   Integer32Vector.F90
   Integer64Vector.F90
@@ -105,57 +105,57 @@ add_library(gFTL-shared
   )
 
 if(_ISO_REAL128)
-  target_sources(gFTL-shared PRIVATE Real128Vector.F90)
-  target_sources(gFTL-shared PRIVATE Complex128Vector.F90)
-  target_sources(gFTL-shared PRIVATE StringReal128Map.F90)
-  target_sources(gFTL-shared PRIVATE StringComplex128Map.F90)
-  target_sources(gFTL-shared PRIVATE Integer32Real128Map.F90)
-  target_sources(gFTL-shared PRIVATE Integer32Complex128Map.F90)
-  target_sources(gFTL-shared PRIVATE Integer64Real128Map.F90)
-  target_sources(gFTL-shared PRIVATE Integer64Complex128Map.F90)
-  target_sources(gFTL-shared PRIVATE IntegerReal128Map.F90)
-  target_sources(gFTL-shared PRIVATE IntegerComplex128Map.F90)
+  target_sources(gftl-shared PRIVATE Real128Vector.F90)
+  target_sources(gftl-shared PRIVATE Complex128Vector.F90)
+  target_sources(gftl-shared PRIVATE StringReal128Map.F90)
+  target_sources(gftl-shared PRIVATE StringComplex128Map.F90)
+  target_sources(gftl-shared PRIVATE Integer32Real128Map.F90)
+  target_sources(gftl-shared PRIVATE Integer32Complex128Map.F90)
+  target_sources(gftl-shared PRIVATE Integer64Real128Map.F90)
+  target_sources(gftl-shared PRIVATE Integer64Complex128Map.F90)
+  target_sources(gftl-shared PRIVATE IntegerReal128Map.F90)
+  target_sources(gftl-shared PRIVATE IntegerComplex128Map.F90)
 endif()
 
 if (_ISO_INT32 EQUAL _INT_DEFAULT_KIND)
-  target_compile_definitions(gFTL-shared PRIVATE _INT_DEFAULT_KIND_IS_INT32)
+  target_compile_definitions(gftl-shared PRIVATE _INT_DEFAULT_KIND_IS_INT32)
 endif ()
 
 if (_ISO_INT64 EQUAL _INT_DEFAULT_KIND)
-  target_compile_definitions(gFTL-shared PRIVATE _INT_DEFAULT_KIND_IS_INT64)
+  target_compile_definitions(gftl-shared PRIVATE _INT_DEFAULT_KIND_IS_INT64)
 endif ()
 
 if (_ISO_REAL32 EQUAL _REAL_DEFAULT_KIND)
-  target_compile_definitions(gFTL-shared PRIVATE _REAL_DEFAULT_KIND_IS_REAL32)
+  target_compile_definitions(gftl-shared PRIVATE _REAL_DEFAULT_KIND_IS_REAL32)
 endif ()
 
 if (_ISO_REAL64 EQUAL _REAL_DEFAULT_KIND)
-  target_compile_definitions(gFTL-shared PRIVATE _REAL_DEFAULT_KIND_IS_REAL64)
+  target_compile_definitions(gftl-shared PRIVATE _REAL_DEFAULT_KIND_IS_REAL64)
 endif ()
       
 if (_ISO_REAL64 EQUAL _DOUBLE_DEFAULT_KIND)
-  target_compile_definitions(gFTL-shared PRIVATE _DOUBLE_DEFAULT_KIND_IS_REAL64)
+  target_compile_definitions(gftl-shared PRIVATE _DOUBLE_DEFAULT_KIND_IS_REAL64)
 endif ()
 
 if (_ISO_REAL128)
   if (_ISO_REAL128 EQUAL _DOUBLE_DEFAULT_KIND)
-    target_compile_definitions(gFTL-shared PRIVATE _DOUBLE_DEFAULT_KIND_IS_REAL128)
+    target_compile_definitions(gftl-shared PRIVATE _DOUBLE_DEFAULT_KIND_IS_REAL128)
   endif ()
 endif()
 
-set (include_dest "mod/gFTL-shared-${gFTL-shared_VERSION_MAJOR}.${gFTL-shared_VERSION_MINOR}")
-set (library_dest "lib/gFTL-shared-${gFTL-shared_VERSION_MAJOR}.${gFTL-shared_VERSION_MINOR}")
+set (include_dest "mod/GFTL_SHARED-${GFTL_SHARED_VERSION_MAJOR}.${GFTL_SHARED_VERSION_MINOR}")
+set (library_dest "lib/GFTL_SHARED-${GFTL_SHARED_VERSION_MAJOR}.${GFTL_SHARED_VERSION_MINOR}")
 
-target_include_directories (gFTL-shared PUBLIC
+target_include_directories (gftl-shared PUBLIC
   $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/mod>
   $<INSTALL_INTERFACE:${include_dest}>
   )
 
-target_link_libraries (gFTL-shared gFTL)
+target_link_libraries (gftl-shared gftl)
 
 add_executable (demo.x demo.F90)
-target_link_libraries (demo.x gFTL-shared)
+target_link_libraries (demo.x gftl-shared)
 
-install (TARGETS gFTL-shared EXPORT gFTL-shared DESTINATION "${library_dest}")
+install (TARGETS gftl-shared EXPORT GFTL_SHARED DESTINATION "${library_dest}")
 install (DIRECTORY ${CMAKE_BINARY_DIR}/mod DESTINATION ${include_dest})
 

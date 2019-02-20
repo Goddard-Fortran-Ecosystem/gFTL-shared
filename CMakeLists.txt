@@ -1,14 +1,24 @@
 cmake_minimum_required(VERSION 3.0)
 
+# Note: the CMake project name is spelled slightly different than the
+# git project.  This is to allow superprojects to use an environment
+# variable to find gFTL-shared with find_package().  Env variables
+# cannot have hyphens, whereas both git and cmake do allow hyphens in
+# names.  Unfortunately, I learned the intricacies of find_package() a
+# bit late in the game, and am trying to avoid relocating the git repo.
+#
+# Names/paths that are derived from the CMake project will all have
+# "GFTL_SHARED" as their base name (and all caps).  Targets such as
+# the library gftl-shared retain the hyphen (and lower case)
+project (GFTL_SHARED
+  VERSION 1.0.0
+  LANGUAGES Fortran)
+
+
 # Most users of this software do not (should not?) have permissions to
 # install in the cmake default of /usr/local (or equiv on other os's).
 # Below, the default is changed to a directory within the build tree
 # unless the user explicitly sets CMAKE_INSTALL_PREFIX in the cache.
-
-project (gFTL-shared
-  VERSION 1.0.0
-  LANGUAGES Fortran)
-
 if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     set (CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/installed" CACHE PATH "default install path" FORCE )
 endif()
@@ -18,8 +28,8 @@ if (POLICY CMP0076)
   cmake_policy(SET CMP0076 NEW)
 endif()
 
-find_package(gFTL QUIET)
-if (NOT gFTL_FOUND)
+find_package(GFTL QUIET)
+if (NOT GFTL_FOUND)
   # from https://cliutils.gitlab.io/modern-cmake/chapters/projects/submodule.html
   find_package(Git QUIET)
   if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
@@ -42,13 +52,15 @@ if (NOT gFTL_FOUND)
 
 endif()
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${GFTL_SHARED_SOURCE_DIR}/cmake")
 include(${CMAKE_Fortran_COMPILER_ID} RESULT_VARIABLE found)
 include(check_intrinsic_kinds RESULT_VARIABLE found)
 
 add_subdirectory(src)
 
-configure_file(gFTL-shared-config-version.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/gFTL-shared-config-version.cmake @ONLY)
-configure_file(gFTL-shared-config.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/gFTL-shared-config.cmake @ONLY)
-install (FILES ${CMAKE_CURRENT_BINARY_DIR}/gFTL-shared-config.cmake ${CMAKE_CURRENT_BINARY_DIR}/gFTL-shared-config-version.cmake DESTINATION "share/gFTL-shared-${gFTL-shared_VERSION_MAJOR}.${gFTL-shared_VERSION_MINOR}")
+configure_file(GFTL_SHARED-config-version.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHARED-config-version.cmake @ONLY)
+configure_file(GFTL_SHARED-config.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHARED-config.cmake @ONLY)
+install (
+  FILES ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHARED-config.cmake ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHARED-config-version.cmake
+  DESTINATION "share/GFTL_SHARED-${GFTL_SHARED_VERSION_MAJOR}.${GFTL_SHARED_VERSION_MINOR}")
 

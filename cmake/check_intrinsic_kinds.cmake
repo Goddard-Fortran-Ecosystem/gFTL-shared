@@ -36,7 +36,7 @@ foreach (kind 32 64 128)
 
   try_compile (
     code_compiles
-    ${CMAKE_BINARY_DIR}
+    ${GFTL_SHARED_BINARY_DIR}
     ${CMAKE_CURRENT_LIST_DIR}/trial_sources/REAL_KIND.F90
     CMAKE_FLAGS "-DCOMPILE_DEFINITIONS=${CMAKE_REQUIRED_DEFINITIONS}")
   
@@ -49,7 +49,7 @@ foreach (kind 32 64 128)
   
   try_compile (
     code_compiles
-    ${CMAKE_BINARY_DIR}
+    ${GFTL_SHARED_BINARY_DIR}
     ${CMAKE_CURRENT_LIST_DIR}/trial_sources/REAL_KIND.F90
     CMAKE_FLAGS "-DCOMPILE_DEFINITIONS=${CMAKE_REQUIRED_DEFINITIONS}")
   

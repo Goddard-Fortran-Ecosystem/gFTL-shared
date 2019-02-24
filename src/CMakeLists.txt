@@ -1,4 +1,4 @@
-set(CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/mod)
+set(CMAKE_Fortran_MODULE_DIRECTORY ${GFTL_SHARED_BINARY_DIR}/mod)
 
 add_library(gftl-shared
   # Vector containers
@@ -148,7 +148,7 @@ set (include_dest "include/GFTL_SHARED-${GFTL_SHARED_VERSION_MAJOR}.${GFTL_SHARE
 set (share_dest "share/GFTL_SHARED-${GFTL_SHARED_VERSION_MAJOR}.${GFTL_SHARED_VERSION_MINOR}")
 
 target_include_directories (gftl-shared PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/mod>
+  $<BUILD_INTERFACE:${GFTL_SHARED_BINARY_DIR}/mod>
   $<INSTALL_INTERFACE:${include_dest}>
   )
 
@@ -157,7 +157,7 @@ target_link_libraries (gftl-shared gftl)
 add_executable (demo.x demo.F90)
 target_link_libraries (demo.x gftl-shared)
 
-install (DIRECTORY ${CMAKE_BINARY_DIR}/mod/ DESTINATION ${include_dest})
+install (DIRECTORY ${GFTL_SHARED_BINARY_DIR}/mod/ DESTINATION ${include_dest})
 install (TARGETS gftl-shared EXPORT GFTL_SHARED DESTINATION "${library_dest}")
 install (EXPORT GFTL_SHARED DESTINATION "${share_dest}")
 

@@ -143,13 +143,11 @@ if (_ISO_REAL128)
   endif ()
 endif()
 
-set (library_dest "lib/GFTL_SHARED-${GFTL_SHARED_VERSION_MAJOR}.${GFTL_SHARED_VERSION_MINOR}")
-set (include_dest "include/GFTL_SHARED-${GFTL_SHARED_VERSION_MAJOR}.${GFTL_SHARED_VERSION_MINOR}")
-set (share_dest "share/GFTL_SHARED-${GFTL_SHARED_VERSION_MAJOR}.${GFTL_SHARED_VERSION_MINOR}")
+set (dest "GFTL_SHARED-${GFTL_SHARED_VERSION_MAJOR}.${GFTL_SHARED_VERSION_MINOR}")
 
 target_include_directories (gftl-shared PUBLIC
   $<BUILD_INTERFACE:${GFTL_SHARED_BINARY_DIR}/mod>
-  $<INSTALL_INTERFACE:${include_dest}>
+  $<INSTALL_INTERFACE:${dest}/include>
   )
 
 target_link_libraries (gftl-shared extern-gftl-shared)
@@ -157,7 +155,8 @@ target_link_libraries (gftl-shared extern-gftl-shared)
 add_executable (demo.x demo.F90)
 target_link_libraries (demo.x gftl-shared)
 
-install (DIRECTORY ${GFTL_SHARED_BINARY_DIR}/mod/ DESTINATION ${include_dest})
-install (TARGETS gftl-shared EXPORT GFTL_SHARED DESTINATION "${library_dest}")
-install (EXPORT GFTL_SHARED DESTINATION "${share_dest}")
+install (DIRECTORY ${GFTL_SHARED_BINARY_DIR}/mod/ DESTINATION ${dest}/include)
+install (TARGETS gftl-shared EXPORT GFTL_SHARED DESTINATION "${dest}/lib")
+install (EXPORT GFTL_SHARED DESTINATION "${dest}/cmake")
+
 

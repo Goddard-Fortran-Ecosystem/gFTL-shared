@@ -152,7 +152,7 @@ target_include_directories (gftl-shared PUBLIC
   $<INSTALL_INTERFACE:${include_dest}>
   )
 
-target_link_libraries (gftl-shared gftl)
+target_link_libraries (gftl-shared extern-gftl-shared)
 
 add_executable (demo.x demo.F90)
 target_link_libraries (demo.x gftl-shared)

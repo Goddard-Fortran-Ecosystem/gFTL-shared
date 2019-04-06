@@ -33,12 +33,19 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${GFTL_SHARED_SOURCE_DIR}/cmake")
 include(${CMAKE_Fortran_COMPILER_ID} RESULT_VARIABLE found)
 include(check_intrinsic_kinds RESULT_VARIABLE found)
 
-add_subdirectory(extern)
-add_subdirectory(src)
+add_subdirectory (extern)
+add_subdirectory (src)
 
-configure_file(GFTL_SHAREDConfig-version.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHAREDConfig-version.cmake @ONLY)
-configure_file(GFTL_SHAREDConfig.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHAREDConfig.cmake @ONLY)
+configure_file (GFTL_SHAREDConfig-version.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHAREDConfig-version.cmake @ONLY)
+configure_file (GFTL_SHAREDConfig.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHAREDConfig.cmake @ONLY)
+configure_file (GFTL_SHARED.mk.in ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHARED.mk @ONLY)
+
+
+set (top_dir GFTL_SHARED-${GFTL_SHARED_VERSION_MAJOR}.${GFTL_SHARED_VERSION_MINOR})
 install (
   FILES ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHAREDConfig.cmake ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHAREDConfig-version.cmake
-  DESTINATION "GFTL_SHARED-${GFTL_SHARED_VERSION_MAJOR}.${GFTL_SHARED_VERSION_MINOR}/cmake")
+  DESTINATION "${top_dir}/cmake")
+install (
+  FILES ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHARED.mk ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHARED.mk
+  DESTINATION "${top_dir}/include")
 

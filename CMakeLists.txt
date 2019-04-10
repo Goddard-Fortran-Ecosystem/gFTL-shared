@@ -38,13 +38,16 @@ add_subdirectory (src)
 
 configure_file (GFTL_SHAREDConfig-version.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHAREDConfig-version.cmake @ONLY)
 configure_file (GFTL_SHAREDConfig.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHAREDConfig.cmake @ONLY)
-configure_file (GFTL_SHARED.mk.in ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHARED.mk @ONLY)
-
 
 set (top_dir GFTL_SHARED-${GFTL_SHARED_VERSION_MAJOR}.${GFTL_SHARED_VERSION_MINOR})
 install (
   FILES ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHAREDConfig.cmake ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHAREDConfig-version.cmake
   DESTINATION "${top_dir}/cmake")
+
+# The following is needed for external projects using *nix make when
+# parent project builds gFTL-shared as a subproject.
+set (GFTL_SHARED_TOP_DIR "${CMAKE_INSTALL_PREFIX}/${top_dir}" CACHE PATH "")
+configure_file (GFTL_SHARED.mk.in ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHARED.mk @ONLY)
 install (
   FILES ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHARED.mk ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHARED.mk
   DESTINATION "${top_dir}/include")

@@ -12,7 +12,7 @@ module gFTL_DoubleVector
 
 #else
 
-#  define _type type(double precision)
+#  define _type double precision
 #  define _vector DoubleVector
 #  define _vectoriterator DoubleVectorIterator
 #  include "templates/vector.inc"

@@ -14,8 +14,8 @@ module gFTL_Integer32DoubleMap
 
   use, intrinsic :: iso_fortran_env, only: INT32
  
-#  define _key type(integer(kind=INT32))
-#  define _value type(double precision)
+#  define _key integer(kind=INT32)
+#  define _value double precision
 #  define _map Integer32DoubleMap
 #  define _iterator Integer32DoubleMapIterator
 #  define _alt

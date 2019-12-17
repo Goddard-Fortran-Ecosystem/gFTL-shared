@@ -14,8 +14,8 @@ module gFTL_Integer32DoubleComplexMap
 
   use, intrinsic :: iso_fortran_env, only: INT32
  
-#  define _key type(integer(kind=INT32))
-#  define _value type(complex(kind=kind(0.0d0)))
+#  define _key integer(kind=INT32)
+#  define _value complex(kind=kind(0.0d0))
 #  define _map Integer32DoubleComplexMap
 #  define _iterator Integer32DoubleComplexMapIterator
 #  define _alt

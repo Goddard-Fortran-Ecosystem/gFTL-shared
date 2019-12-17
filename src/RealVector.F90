@@ -12,7 +12,7 @@ module gFTL_RealVector
 
 #else
 
-#  define _type type(real)
+#  define _type real
 #  define _vector RealVector
 #  define _vectoriterator RealVectorIterator
 #  include "templates/vector.inc"

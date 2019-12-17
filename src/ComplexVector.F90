@@ -12,7 +12,7 @@ module gFTL_ComplexVector
 
 #else
 
-#  define _type type(complex)
+#  define _type complex
 #  define _vector ComplexVector
 #  define _vectoriterator ComplexVectorIterator
 #  include "templates/vector.inc"

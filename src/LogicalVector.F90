@@ -1,6 +1,6 @@
 module gFTL_LogicalVector
 
-#define _type type(logical)
+#define _type logical
 #define _vector LogicalVector
 #define _vectoriterator LogicalVectorIterator
 #include "templates/vector.inc"

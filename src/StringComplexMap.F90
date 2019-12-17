@@ -14,7 +14,7 @@ module gFTL_StringComplexMap
   
  
 #  include "types/key_deferredLengthString.inc"
-#  define _value type(complex)
+#  define _value complex
 #  define _map StringComplexMap
 #  define _iterator StringComplexMapIterator
 #  define _alt

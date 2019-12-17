@@ -1,8 +1,8 @@
 module gFTL_Integer32LogicalMap
   use, intrinsic:: iso_fortran_env, only: INT32
 
-#define _key type(integer(kind=INT32))
-#define _value type(logical)
+#define _key integer(kind=INT32)
+#define _value logical
 #define _map Integer32LogicalMap
 #define _iterator Integer32LogicalMapIterator
 #define _alt

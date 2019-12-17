@@ -13,8 +13,8 @@ module gFTL_IntegerComplexMap
 
 #else
 
-#  define _key type(integer)
-#  define _value type(complex)
+#  define _key integer
+#  define _value complex
 #  define _map IntegerComplexMap
 #  define _iterator IntegerComplexMapIterator
 #  define _alt

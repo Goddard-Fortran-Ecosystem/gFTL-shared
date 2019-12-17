@@ -2,7 +2,7 @@ module gFTL_StringComplex64Map
   use, intrinsic:: iso_fortran_env, only: REAL64
 
 #include "types/key_deferredLengthString.inc"
-#define _value type(complex(kind=REAL64))
+#define _value complex(kind=REAL64)
 #define _map StringComplex64Map
 #define _iterator StringComplex64MapIterator
 #define _alt

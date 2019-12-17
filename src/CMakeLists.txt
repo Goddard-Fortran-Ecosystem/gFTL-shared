@@ -39,10 +39,6 @@ add_library(gftl-shared
   StringStringMap.F90
   StringUnlimitedMap.F90
 
-
-
-
-
   Integer32Integer32Map.F90
   Integer32Integer64Map.F90
   Integer32IntegerMap.F90
@@ -79,7 +75,6 @@ add_library(gftl-shared
   Integer64LogicalMap.F90
   Integer64StringMap.F90
   Integer64UnlimitedMap.F90
-
 
 
   IntegerInteger32Map.F90
@@ -152,8 +147,8 @@ target_include_directories (gftl-shared PUBLIC
 
 target_link_libraries (gftl-shared extern-gftl-shared)
 
-add_executable (demo.x demo.F90)
-target_link_libraries (demo.x gftl-shared)
+#add_executable (demo.x demo.F90)
+#target_link_libraries (demo.x gftl-shared)
 
 install (DIRECTORY ${GFTL_SHARED_BINARY_DIR}/mod/ DESTINATION ${dest}/include)
 install (TARGETS gftl-shared EXPORT GFTL_SHARED DESTINATION "${dest}/lib")

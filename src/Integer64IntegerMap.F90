@@ -14,8 +14,8 @@ module gFTL_Integer64IntegerMap
 
   use, intrinsic :: iso_fortran_env, only: INT64
  
-#  define _key type(integer(kind=INT64))
-#  define _value type(integer)
+#  define _key integer(kind=INT64)
+#  define _value integer
 #  define _map Integer64IntegerMap
 #  define _iterator Integer64IntegerMapIterator
 #  define _alt

@@ -14,7 +14,7 @@ module gFTL_StringIntegerMap
   
  
 #  include "types/key_deferredLengthString.inc"
-#  define _value type(integer)
+#  define _value integer
 #  define _map StringIntegerMap
 #  define _iterator StringIntegerMapIterator
 #  define _alt

@@ -13,7 +13,7 @@ module gFTL_IntegerUnlimitedMap
 #else
 
  
-#  define _key type(integer)
+#  define _key integer
 #  include "types/value_unlimitedPoly.inc"
 #  define _map IntegerUnlimitedMap
 #  define _iterator IntegerUnlimitedMapIterator

@@ -12,8 +12,8 @@ module gFTL_IntegerLogicalMap
 
 #else
 
-#  define _key type(integer)
-#  define _value type(logical)
+#  define _key integer
+#  define _value logical
 #  define _map IntegerLogicalMap
 #  define _iterator IntegerLogicalMapIterator
 #  define _alt

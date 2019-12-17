@@ -13,8 +13,8 @@ module gFTL_IntegerDoubleComplexMap
 
 #else
 
-#  define _key type(integer)
-#  define _value type(complex(kind=kind(0.d0)))
+#  define _key integer
+#  define _value complex(kind=kind(0.d0))
 #  define _map IntegerDoubleComplexMap
 #  define _iterator IntegerDoubleComplexMapIterator
 #  define _alt

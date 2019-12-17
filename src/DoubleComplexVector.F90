@@ -12,7 +12,7 @@ module gFTL_DoubleComplexVector
 
 #else
 
-#  define _type type(complex(kind=kind(0.d0)))
+#  define _type complex(kind=kind(0.d0))
 #  define _vector DoubleComplexVector
 #  define _vectoriterator DoubleComplexVectorIterator
 #  include "templates/vector.inc"

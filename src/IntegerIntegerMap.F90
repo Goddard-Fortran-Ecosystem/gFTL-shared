@@ -12,8 +12,8 @@ module gFTL_IntegerIntegerMap
 
 #else
 
-#  define _key type(integer)
-#  define _value type(integer)
+#  define _key integer
+#  define _value integer
 #  define _map IntegerIntegerMap
 #  define _iterator IntegerIntegerMapIterator
 #  define _alt

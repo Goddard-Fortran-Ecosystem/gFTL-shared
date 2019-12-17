@@ -2,7 +2,7 @@ module gFTL_StringInteger32Map
   use, intrinsic:: iso_fortran_env, only: INT32
 
 #include "types/key_deferredLengthString.inc"
-#define _value type(integer(kind=INT32))
+#define _value integer(kind=INT32)
 #define _map StringInteger32Map
 #define _iterator StringInteger32MapIterator
 #define _alt

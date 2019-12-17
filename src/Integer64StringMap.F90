@@ -1,7 +1,7 @@
 module gFTL_Integer64StringMap
   use, intrinsic:: iso_fortran_env, only: INT64
 
-#define _key type(integer(kind=INT64))
+#define _key integer(kind=INT64)
 #include "types/value_deferredLengthString.inc"
 #define _map Integer64StringMap
 #define _iterator Integer64StringMapIterator

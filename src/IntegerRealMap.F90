@@ -13,8 +13,8 @@ module gFTL_IntegerRealMap
 
 #else
 
-#  define _key type(integer)
-#  define _value type(real)
+#  define _key integer
+#  define _value real
 #  define _map IntegerRealMap
 #  define _iterator IntegerRealMapIterator
 #  define _alt

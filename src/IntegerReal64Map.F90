@@ -15,8 +15,8 @@ module gFTL_IntegerReal64Map
 
    use, intrinsic :: iso_fortran_env, only: REAL64
 
-#  define _key type(integer)
-#  define _value type(real(kind=REAL64))
+#  define _key integer
+#  define _value real(kind=REAL64)
 #  define _map IntegerReal64Map
 #  define _iterator IntegerReal64MapIterator
 #  define _alt

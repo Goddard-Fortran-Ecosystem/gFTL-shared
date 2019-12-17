@@ -14,7 +14,7 @@ module gFTL_StringDoubleComplexMap
   
  
 #  include "types/key_deferredLengthString.inc"
-#  define _value type(complex(kind=kind(0.0d0)))
+#  define _value complex(kind=kind(0.0d0))
 #  define _map StringDoubleComplexMap
 #  define _iterator StringDoubleComplexMapIterator
 #  define _alt

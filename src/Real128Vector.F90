@@ -1,7 +1,7 @@
 module gFTL_Real128Vector
   use, intrinsic :: iso_fortran_env, only: REAL128
 
-#define _type type(real(kind=REAL128))
+#define _type real(kind=REAL128)
 #define _vector Real128Vector
 #define _vectoriterator Real128VectorIterator
 #include "templates/vector.inc"

@@ -1,7 +1,7 @@
 module gFTL_StringLogicalMap
 
 #include "types/key_deferredLengthString.inc"
-#define _value type(logical)
+#define _value logical
 #define _map StringLogicalMap
 #define _iterator StringLogicalMapIterator
 #define _alt

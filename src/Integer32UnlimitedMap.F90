@@ -1,7 +1,7 @@
 module gFTL_Integer32UnlimitedMap
   use, intrinsic:: iso_fortran_env, only: INT32
 
-#define _key type(integer(kind=INT32))
+#define _key integer(kind=INT32)
 #include "types/value_unlimitedPoly.inc"
 #define _map Integer32UnlimitedMap
 #define _iterator Integer32UnlimitedMapIterator

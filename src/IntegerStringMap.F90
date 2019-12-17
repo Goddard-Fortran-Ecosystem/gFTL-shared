@@ -13,7 +13,7 @@ module gFTL_IntegerStringMap
 #else
 
  
-#  define _key type(integer)
+#  define _key integer
 #  include "types/value_deferredLengthString.inc"
 #  define _map IntegerStringMap
 #  define _iterator IntegerStringMapIterator

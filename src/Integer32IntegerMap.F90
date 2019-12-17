@@ -14,8 +14,8 @@ module gFTL_Integer32IntegerMap
 
   use, intrinsic :: iso_fortran_env, only: INT32
  
-#  define _key type(integer(kind=INT32))
-#  define _value type(integer)
+#  define _key integer(kind=INT32)
+#  define _value integer
 #  define _map Integer32IntegerMap
 #  define _iterator Integer32IntegerMapIterator
 #  define _alt

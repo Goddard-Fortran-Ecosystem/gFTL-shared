@@ -1,7 +1,7 @@
 module gFTL_Integer64Vector
   use, intrinsic :: iso_fortran_env, only: INT64
 
-#define _type type(integer(kind=INT64))
+#define _type integer(kind=INT64)
 #define _vector Integer64Vector
 #define _vectoriterator Integer64VectorIterator
 #include "templates/vector.inc"

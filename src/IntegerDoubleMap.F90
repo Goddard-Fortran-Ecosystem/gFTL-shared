@@ -13,8 +13,8 @@ module gFTL_IntegerDoubleMap
 
 #else
 
-#  define _key type(integer)
-#  define _value type(double precision)
+#  define _key integer
+#  define _value double precision
 #  define _map IntegerDoubleMap
 #  define _iterator IntegerDoubleMapIterator
 #  define _alt

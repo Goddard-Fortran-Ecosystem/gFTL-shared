@@ -1,8 +1,8 @@
 module gFTL_Integer32Real64Map
   use, intrinsic:: iso_fortran_env, only: INT32, REAL64
 
-#define _key type(integer(kind=INT32))
-#define _value type(real(kind=REAL64))
+#define _key integer(kind=INT32)
+#define _value real(kind=REAL64)
 #define _map Integer32Real64Map
 #define _iterator Integer32Real64MapIterator
 #define _alt

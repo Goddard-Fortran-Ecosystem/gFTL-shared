@@ -29,7 +29,7 @@ if (POLICY CMP0076)
 endif()
 
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${GFTL_SHARED_SOURCE_DIR}/cmake")
+set(CMAKE_MODULE_PATH "${GFTL_SHARED_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 include(${CMAKE_Fortran_COMPILER_ID} RESULT_VARIABLE found)
 include(check_intrinsic_kinds RESULT_VARIABLE found)
 

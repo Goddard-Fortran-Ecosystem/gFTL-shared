@@ -1,2 +1,10 @@
-1.0.3	2019-11-07
-	- updated gFTL to include memory leak workaround for Intel 18
+
+# Change Log
+
+## Unreleased
+
+## [1.0.3] 2020-03-06
+
+### Changed
+  -  Update gFTL version in to v1.2.5
+

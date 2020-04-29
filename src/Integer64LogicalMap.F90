@@ -5,6 +5,7 @@ module gFTL_Integer64LogicalMap
 #define _value type(logical)
 #define _map Integer64LogicalMap
 #define _iterator Integer64LogicalMapIterator
+#define _pair Integer64LogicalMapPair
 #define _alt
 
 #include "templates/map.inc"

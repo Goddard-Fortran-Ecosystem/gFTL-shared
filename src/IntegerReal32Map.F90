@@ -19,6 +19,7 @@ module gFTL_IntegerReal32Map
 #  define _value type(real(kind=REAL32))
 #  define _map IntegerReal32Map
 #  define _iterator IntegerReal32MapIterator
+#  define _pair IntegerReal32MapPair
 #  define _alt
 
 #  include "templates/map.inc"

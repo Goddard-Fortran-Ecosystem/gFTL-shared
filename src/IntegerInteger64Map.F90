@@ -18,6 +18,7 @@ module gFTL_IntegerInteger64Map
 #  define _value type(integer(kind=INT64))
 #  define _map IntegerInteger64Map
 #  define _iterator IntegerInteger64MapIterator
+#  define _pair IntegerInteger64MapPair
 #  define _alt
 
 #  include "templates/map.inc"

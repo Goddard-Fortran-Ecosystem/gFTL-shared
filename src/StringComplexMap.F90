@@ -17,6 +17,7 @@ module gFTL_StringComplexMap
 #  define _value type(complex)
 #  define _map StringComplexMap
 #  define _iterator StringComplexMapIterator
+#  define _pair StringComplexMapPair
 #  define _alt
 
 #  include "templates/map.inc"

@@ -4,6 +4,7 @@ module gFTL_StringStringMap
 #include "types/value_deferredLengthString.inc"
 #define _map StringStringMap
 #define _iterator StringStringMapIterator
+#define _pair StringStringMapPair
 #define _alt
 
 #include "templates/map.inc"

@@ -5,6 +5,7 @@ module gFTL_StringReal32Map
 #define _value type(real(kind=REAL32))
 #define _map StringReal32Map
 #define _iterator StringReal32MapIterator
+#define _pair StringReal32MapPair
 #define _alt
 
 #include "templates/map.inc"

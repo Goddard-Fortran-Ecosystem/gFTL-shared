@@ -5,6 +5,7 @@ module gFTL_Integer32StringMap
 #include "types/value_deferredLengthString.inc"
 #define _map Integer32StringMap
 #define _iterator Integer32StringMapIterator
+#define _pair Integer32StringMapPair
 #define _alt
 
 #include "templates/map.inc"

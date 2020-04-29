@@ -4,6 +4,7 @@ module gFTL_StringUnlimitedMap
 #include "types/value_unlimitedPoly.inc"
 #define _map StringUnlimitedMap
 #define _iterator StringUnlimitedMapIterator
+#define _pair StringUnlimitedMapPair
 #define _alt
 
 #include "templates/map.inc"

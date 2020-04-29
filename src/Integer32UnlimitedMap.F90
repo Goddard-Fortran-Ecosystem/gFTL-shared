@@ -5,6 +5,7 @@ module gFTL_Integer32UnlimitedMap
 #include "types/value_unlimitedPoly.inc"
 #define _map Integer32UnlimitedMap
 #define _iterator Integer32UnlimitedMapIterator
+#define _pair Integer32UnlimitedMapPair
 #define _alt
 
 #include "templates/map.inc"

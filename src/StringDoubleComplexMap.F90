@@ -17,6 +17,7 @@ module gFTL_StringDoubleComplexMap
 #  define _value type(complex(kind=kind(0.0d0)))
 #  define _map StringDoubleComplexMap
 #  define _iterator StringDoubleComplexMapIterator
+#  define _pair StringDoubleComplexMapPair
 #  define _alt
 
 #  include "templates/map.inc"

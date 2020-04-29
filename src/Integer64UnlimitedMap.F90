@@ -5,6 +5,7 @@ module gFTL_Integer64UnlimitedMap
 #include "types/value_unlimitedPoly.inc"
 #define _map Integer64UnlimitedMap
 #define _iterator Integer64UnlimitedMapIterator
+#define _pair Integer64UnlimitedMapPair
 #define _alt
 
 #include "templates/map.inc"

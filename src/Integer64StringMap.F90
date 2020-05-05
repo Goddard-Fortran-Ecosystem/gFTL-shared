@@ -5,7 +5,7 @@ module gFTL_Integer64StringMap
 #include "types/value_deferredLengthString.inc"
 #define _map Integer64StringMap
 #define _iterator Integer64StringMapIterator
-#define _pair Integer64StringMapPair
+#define _pair Integer64StringPair
 #define _alt
 
 #include "templates/map.inc"

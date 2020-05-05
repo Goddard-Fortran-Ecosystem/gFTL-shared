@@ -18,7 +18,7 @@ module gFTL_Integer32DoubleMap
 #  define _value type(double precision)
 #  define _map Integer32DoubleMap
 #  define _iterator Integer32DoubleMapIterator
-#  define _pair Integer32DoubleMapPair
+#  define _pair Integer32DoublePair
 #  define _alt
 
 #  include "templates/map.inc"

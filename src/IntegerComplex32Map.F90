@@ -19,7 +19,7 @@ module gFTL_IntegerComplex32Map
 #  define _value type(complex(kind=REAL32))
 #  define _map IntegerComplex32Map
 #  define _iterator IntegerComplex32MapIterator
-#  define _pair IntegerComplex32MapPair
+#  define _pair IntegerComplex32Pair
 #  define _alt
 
 #  include "templates/map.inc"

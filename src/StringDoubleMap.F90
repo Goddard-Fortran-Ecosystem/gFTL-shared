@@ -17,7 +17,7 @@ module gFTL_StringDoubleMap
 #  define _value type(double precision)
 #  define _map StringDoubleMap
 #  define _iterator StringDoubleMapIterator
-#  define _pair StringDoubleMapPair
+#  define _pair StringDoublePair
 #  define _alt
 
 #  include "templates/map.inc"

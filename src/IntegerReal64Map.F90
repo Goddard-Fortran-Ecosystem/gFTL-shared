@@ -19,7 +19,7 @@ module gFTL_IntegerReal64Map
 #  define _value type(real(kind=REAL64))
 #  define _map IntegerReal64Map
 #  define _iterator IntegerReal64MapIterator
-#  define _pair IntegerReal64MapPair
+#  define _pair IntegerReal64Pair
 #  define _alt
 
 #  include "templates/map.inc"

@@ -18,7 +18,7 @@ module gFTL_Integer64DoubleComplexMap
 #  define _value type(complex(kind=kind(0.0d0)))
 #  define _map Integer64DoubleComplexMap
 #  define _iterator Integer64DoubleComplexMapIterator
-#  define _pair Integer64DoubleComplexMapPair
+#  define _pair Integer64DoubleComplexPair
 #  define _alt
 
 #  include "templates/map.inc"

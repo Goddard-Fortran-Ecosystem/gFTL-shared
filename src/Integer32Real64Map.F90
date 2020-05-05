@@ -5,7 +5,7 @@ module gFTL_Integer32Real64Map
 #define _value type(real(kind=REAL64))
 #define _map Integer32Real64Map
 #define _iterator Integer32Real64MapIterator
-#define _pair Integer32Real64MapPair
+#define _pair Integer32Real64Pair
 #define _alt
 
 #include "templates/map.inc"

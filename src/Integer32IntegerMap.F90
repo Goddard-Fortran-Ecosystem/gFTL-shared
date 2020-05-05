@@ -18,7 +18,7 @@ module gFTL_Integer32IntegerMap
 #  define _value type(integer)
 #  define _map Integer32IntegerMap
 #  define _iterator Integer32IntegerMapIterator
-#  define _pair Integer32IntegerMapPair
+#  define _pair Integer32IntegerPair
 #  define _alt
 
 #  include "templates/map.inc"

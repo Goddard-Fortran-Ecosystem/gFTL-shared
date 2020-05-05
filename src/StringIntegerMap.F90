@@ -17,7 +17,7 @@ module gFTL_StringIntegerMap
 #  define _value type(integer)
 #  define _map StringIntegerMap
 #  define _iterator StringIntegerMapIterator
-#  define _pair StringIntegerMapPair
+#  define _pair StringIntegerPair
 #  define _alt
 
 #  include "templates/map.inc"

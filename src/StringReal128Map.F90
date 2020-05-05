@@ -5,7 +5,7 @@ module gFTL_StringReal128Map
 #define _value type(real(kind=REAL128))
 #define _map StringReal128Map
 #define _iterator StringReal128MapIterator
-#define _pair StringReal128MapPair
+#define _pair StringReal128Pair
 #define _alt
 
 #include "templates/map.inc"

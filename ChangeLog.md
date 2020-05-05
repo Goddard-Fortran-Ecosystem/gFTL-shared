@@ -5,6 +5,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.6] - 2020-05-05
+
+### Changed
+   - overrode the default name for Pair types in generated Maps
+     Was tripping an XLF bug, but this change is also potentially
+     useful to users.
 ## [1.0.5] - 2020-04-08
 
 ### Changed

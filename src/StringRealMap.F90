@@ -16,6 +16,7 @@ module gFTL_StringRealMap
 #  define _value type(real)
 #  define _map StringRealMap
 #  define _iterator StringRealMapIterator
+#  define _pair StringRealPair
 #  define _alt
 
 #  include "templates/map.inc"

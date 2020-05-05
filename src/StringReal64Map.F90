@@ -5,6 +5,7 @@ module gFTL_StringReal64Map
 #define _value type(real(kind=REAL64))
 #define _map StringReal64Map
 #define _iterator StringReal64MapIterator
+#define _pair StringReal64Pair
 #define _alt
 
 #include "templates/map.inc"

@@ -5,6 +5,7 @@ module gFTL_StringInteger64Map
 #define _value type(integer(kind=INT64))
 #define _map StringInteger64Map
 #define _iterator StringInteger64MapIterator
+#define _pair StringInteger64Pair
 #define _alt
 
 #include "templates/map.inc"

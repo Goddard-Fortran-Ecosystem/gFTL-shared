@@ -19,6 +19,7 @@ module gFTL_IntegerReal128Map
 #  define _value type(real(kind=REAL128))
 #  define _map IntegerReal128Map
 #  define _iterator IntegerReal128MapIterator
+#  define _pair IntegerReal128Pair
 #  define _alt
 
 #  include "templates/map.inc"

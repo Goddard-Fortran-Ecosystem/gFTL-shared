@@ -5,6 +5,7 @@ module gFTL_StringComplex32Map
 #define _value type(complex(kind=REAL32))
 #define _map StringComplex32Map
 #define _iterator StringComplex32MapIterator
+#define _pair StringComplex32Pair
 #define _alt
 
 #include "templates/map.inc"

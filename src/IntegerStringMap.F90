@@ -17,6 +17,7 @@ module gFTL_IntegerStringMap
 #  include "types/value_deferredLengthString.inc"
 #  define _map IntegerStringMap
 #  define _iterator IntegerStringMapIterator
+#  define _pair IntegerStringPair
 #  define _alt
 
 #  include "templates/map.inc"

@@ -5,6 +5,7 @@ module gFTL_Integer64Integer32Map
 #define _value type(integer(kind=INT32))
 #define _map Integer64Integer32Map
 #define _iterator Integer64Integer32MapIterator
+#define _pair Integer64Integer32Pair
 #define _alt
 
 #include "templates/map.inc"

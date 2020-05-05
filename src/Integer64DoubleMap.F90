@@ -18,6 +18,7 @@ module gFTL_Integer64DoubleMap
 #  define _value type(double precision)
 #  define _map Integer64DoubleMap
 #  define _iterator Integer64DoubleMapIterator
+#  define _pair Integer64DoublePair
 #  define _alt
 
 #  include "templates/map.inc"

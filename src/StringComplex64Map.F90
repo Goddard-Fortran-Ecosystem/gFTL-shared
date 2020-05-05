@@ -5,6 +5,7 @@ module gFTL_StringComplex64Map
 #define _value type(complex(kind=REAL64))
 #define _map StringComplex64Map
 #define _iterator StringComplex64MapIterator
+#define _pair StringComplex64Pair
 #define _alt
 
 #include "templates/map.inc"

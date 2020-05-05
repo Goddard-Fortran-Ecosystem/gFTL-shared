@@ -4,6 +4,7 @@ module gFTL_StringLogicalMap
 #define _value type(logical)
 #define _map StringLogicalMap
 #define _iterator StringLogicalMapIterator
+#define _pair StringLogicalPair
 #define _alt
 
 #include "templates/map.inc"

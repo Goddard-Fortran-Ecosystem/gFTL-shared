@@ -5,6 +5,7 @@ module gFTL_StringComplex128Map
 #define _value type(complex(kind=REAL128))
 #define _map StringComplex128Map
 #define _iterator StringComplex128MapIterator
+#define _pair StringComplex128Pair
 #define _alt
 
 #include "templates/map.inc"

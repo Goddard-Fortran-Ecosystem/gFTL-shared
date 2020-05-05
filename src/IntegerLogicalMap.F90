@@ -16,6 +16,7 @@ module gFTL_IntegerLogicalMap
 #  define _value type(logical)
 #  define _map IntegerLogicalMap
 #  define _iterator IntegerLogicalMapIterator
+#  define _pair IntegerLogicalPair
 #  define _alt
 
 #  include "templates/map.inc"

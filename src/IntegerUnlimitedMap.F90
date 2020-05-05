@@ -17,6 +17,7 @@ module gFTL_IntegerUnlimitedMap
 #  include "types/value_unlimitedPoly.inc"
 #  define _map IntegerUnlimitedMap
 #  define _iterator IntegerUnlimitedMapIterator
+#  define _pair IntegerUnlimitedPair
 #  define _alt
 
 #  include "templates/map.inc"

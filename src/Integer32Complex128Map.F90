@@ -5,6 +5,7 @@ module gFTL_Integer32Complex128Map
 #define _value type(complex(kind=REAL128))
 #define _map Integer32Complex128Map
 #define _iterator Integer32Complex128MapIterator
+#define _pair Integer32Complex128Pair
 #define _alt
 
 #include "templates/map.inc"

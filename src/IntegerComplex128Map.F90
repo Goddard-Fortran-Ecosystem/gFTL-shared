@@ -19,6 +19,7 @@ module gFTL_IntegerComplex128Map
 #  define _value type(complex(kind=REAL128))
 #  define _map IntegerComplex128Map
 #  define _iterator IntegerComplex128MapIterator
+#  define _pair IntegerComplex128Pair
 #  define _alt
 
 #  include "templates/map.inc"

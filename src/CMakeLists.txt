@@ -150,13 +150,10 @@ target_include_directories (gftl-shared PUBLIC
   $<INSTALL_INTERFACE:${dest}/include>
   )
 
-target_link_libraries (gftl-shared extern-gftl-shared)
+target_link_libraries (gftl-shared PUBLIC gftl)
 
 add_executable (demo.x demo.F90)
 target_link_libraries (demo.x gftl-shared)
 
 install (DIRECTORY ${GFTL_SHARED_BINARY_DIR}/mod/ DESTINATION ${dest}/include)
 install (TARGETS gftl-shared EXPORT GFTL_SHARED DESTINATION "${dest}/lib")
-install (EXPORT GFTL_SHARED DESTINATION "${dest}/cmake")
-
-

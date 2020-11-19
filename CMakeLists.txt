@@ -37,8 +37,14 @@ include(check_intrinsic_kinds RESULT_VARIABLE found)
 add_subdirectory (extern)
 add_subdirectory (src)
 
-configure_file (GFTL_SHAREDConfig-version.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHAREDConfig-version.cmake @ONLY)
-configure_file (GFTL_SHAREDConfig.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHAREDConfig.cmake @ONLY)
+include(CMakePackageConfigHelpers)
+configure_package_config_file(GFTL_SHAREDConfig.cmake.in GFTL_SHAREDConfig.cmake
+  INSTALL_DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHAREDConfig.cmake
+  )
+write_basic_package_version_file(GFTL_SHAREDConfig-version.cmake
+  VERSION ${PACKAGE_VERSION}
+  COMPATIBILITY SameMajorVersion
+  )
 
 set (top_dir GFTL_SHARED-${GFTL_SHARED_VERSION_MAJOR}.${GFTL_SHARED_VERSION_MINOR})
 install (

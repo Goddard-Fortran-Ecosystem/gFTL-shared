@@ -62,7 +62,7 @@ install (
 install(EXPORT GFTL_SHARED
   FILE GFTL_SHAREDTargets.cmake
   NAMESPACE GFTL_SHARED::
-  DESTINATION "${top_dir}/cmake/GFTL_SHARED"
+  DESTINATION "${top_dir}/cmake"
   )
 export(EXPORT GFTL_SHARED
   FILE "${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHAREDTargets.cmake"

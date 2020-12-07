@@ -5,6 +5,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2020-12-07
+
+### Added
+
+- improved support for including gFTL-shared within other projects
+  (as opposed to using `find_package()`)
+
+### Changed
+
+- updated to latest gFTL (changes related to above)
+	
 ## [1.0.7] - 2020-05-12
 - Trivial upate of submodule
 	

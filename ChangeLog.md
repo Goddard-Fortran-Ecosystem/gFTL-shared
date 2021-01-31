@@ -5,6 +5,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2021-01-31
+
+### Fixed
+
+- Incorrect variable in build_submodules.cmake was interfering with
+  builds of some upstream projects.
+
 ## [1.1.0] - 2020-12-07
 
 ### Added

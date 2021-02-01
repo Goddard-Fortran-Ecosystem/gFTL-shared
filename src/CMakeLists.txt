@@ -104,6 +104,8 @@ add_library(gftl-shared
   
   )
 
+add_library(GFTL_SHARED::gftl-shared ALIAS gftl-shared)
+
 if(_ISO_REAL128)
   target_sources(gftl-shared PRIVATE Real128Vector.F90)
   target_sources(gftl-shared PRIVATE Complex128Vector.F90)

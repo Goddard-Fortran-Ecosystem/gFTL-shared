@@ -152,7 +152,12 @@ target_include_directories (gftl-shared PUBLIC
   $<INSTALL_INTERFACE:${dest}/include>
   )
 
-target_link_libraries (gftl-shared extern-gftl-shared)
+# We attempt to use find_package() first for each dependency.  But all
+# dependencies are also available as submodules.
+include(build_submodule)
+build_submodule(../extern/gFTL PROJECT GFTL TARGET GFTL::gftl)
+
+target_link_libraries (gftl-shared PUBLIC GFTL::gftl)
 
 add_executable (demo.x demo.F90)
 target_link_libraries (demo.x gftl-shared)

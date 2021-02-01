@@ -34,7 +34,6 @@ set(CMAKE_MODULE_PATH "${GFTL_SHARED_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 include(${CMAKE_Fortran_COMPILER_ID} RESULT_VARIABLE found)
 include(check_intrinsic_kinds RESULT_VARIABLE found)
 
-add_subdirectory (extern)
 add_subdirectory (src)
 
 configure_file (GFTL_SHAREDConfig-version.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHAREDConfig-version.cmake @ONLY)

@@ -1,6 +1,25 @@
 # Package configuration file
 
-get_filename_component (SELF_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
-set (PREFIX ${SELF_DIR}/../..)
-set (GFTL_SHARED_TOP_DIR ${PREFIX}/GFTL_SHARED-@GFTL_SHARED_VERSION_MAJOR@.@GFTL_SHARED_VERSION_MINOR@ CACHE PATH "")
-include ("${GFTL_SHARED_TOP_DIR}/cmake/GFTL_SHARED.cmake")
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+
+# Enables the use of the build directory directly, without having to
+# specify the paths for the external packages as well
+if (EXISTS "@CMAKE_BINARY_DIR@/extern/gFTL")
+  list(APPEND CMAKE_PREFIX_PATH "@CMAKE_BINARY_DIR@/extern/gFTL")
+elseif (EXISTS "@GFTL_ROOT@")
+  # This case covers external installations
+  set(GFTL_ROOT "@GFTL_ROOT@")
+elseif (EXISTS "@GFTL_DIR@")
+  # This case covers external installations
+  set(GFTL_ROOT "@GFTL_DIR@")
+elseif (EXISTS "@GFTL_TOP_DIR@")
+  # Lastly, this likely from building the submodule
+  set(GFTL_ROOT "@GFTL_TOP_DIR@")
+endif()
+
+find_dependency(GFTL)
+
+set (GFTL_SHARED_TOP_DIR "@GFTL_SHARED_TOP_DIR@")
+include ("${CMAKE_CURRENT_LIST_DIR}/GFTL_SHAREDTargets.cmake")

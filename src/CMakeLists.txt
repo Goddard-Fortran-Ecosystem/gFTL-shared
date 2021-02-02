@@ -164,6 +164,3 @@ target_link_libraries (demo.x gftl-shared)
 
 install (DIRECTORY ${GFTL_SHARED_BINARY_DIR}/mod/ DESTINATION ${dest}/include)
 install (TARGETS gftl-shared EXPORT GFTL_SHARED DESTINATION "${dest}/lib")
-install (EXPORT GFTL_SHARED DESTINATION "${dest}/cmake")
-
-

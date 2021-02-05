@@ -104,6 +104,8 @@ add_library(gftl-shared
   
   )
 
+add_library(GFTL_SHARED::gftl-shared ALIAS gftl-shared)
+
 if(_ISO_REAL128)
   target_sources(gftl-shared PRIVATE Real128Vector.F90)
   target_sources(gftl-shared PRIVATE Complex128Vector.F90)
@@ -150,13 +152,15 @@ target_include_directories (gftl-shared PUBLIC
   $<INSTALL_INTERFACE:${dest}/include>
   )
 
-target_link_libraries (gftl-shared extern-gftl-shared)
+# We attempt to use find_package() first for each dependency.  But all
+# dependencies are also available as submodules.
+include(build_submodule)
+build_submodule(../extern/gFTL PROJECT GFTL TARGET GFTL::gftl)
+
+target_link_libraries (gftl-shared PUBLIC GFTL::gftl)
 
 add_executable (demo.x demo.F90)
 target_link_libraries (demo.x gftl-shared)
 
 install (DIRECTORY ${GFTL_SHARED_BINARY_DIR}/mod/ DESTINATION ${dest}/include)
 install (TARGETS gftl-shared EXPORT GFTL_SHARED DESTINATION "${dest}/lib")
-install (EXPORT GFTL_SHARED DESTINATION "${dest}/cmake")
-
-

@@ -5,6 +5,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2021-02-06
+
+### Added
+
+- Improved ability to embed within other projects.
+
+### Changed
+
+- gFTL-shared now uses CMake namespaces.    Upstream projects should link with
+  `GFTL_SHARED::gftl-shared` instead of just `gftl-shared`.
+  
+- Updated gFTL submodule.
+
 ## [1.1.3] - 2021-01-31
 
 ### Fixed

@@ -1,0 +1,17 @@
+module gFTL2_Logical@Container@
+
+#define T __LOGICAL
+#define @Container@ Logical@Container@
+#define @Container@Iterator Logical@Container@Iterator
+#define @Container@RIterator Logical@Container@RIterator
+#include "@container@/template.inc"
+#undef @Container@RIterator
+#undef @Container@Iterator
+#undef @Container@
+#undef T
+  
+end module gFTL2_Logical@Container@
+
+module gFTL_Logical@Container@
+   use gFTL2_Logical@Container@
+end module gFTL_Logical@Container@

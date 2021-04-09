@@ -1,0 +1,24 @@
+module gFTL2_Real@Container@
+
+#if defined(_REAL_DEFAULT_KIND_IS_REAL32)
+
+  use gFTL2_Real32@Container@, Real@Container@ => Real32@Container@
+
+#elif defined(_REAL_DEFAULT_KIND_IS_REAL64)
+
+  use gFTL2_Real64@Container@, Real@Container@ => Real64@Container@
+
+#else
+
+#  define T __REAL
+#  define @Container@ Real@Container@
+#  include "@container@/template.inc"
+#  undef @Container@
+#  undef T
+
+#endif
+
+end module gFTL2_Real@Container@
+module gFTL_Real@Container@
+   use gFTL2_Real@Container@
+end module gFTL_Real@Container@

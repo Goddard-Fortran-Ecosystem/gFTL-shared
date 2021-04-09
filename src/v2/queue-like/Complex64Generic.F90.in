@@ -1,0 +1,14 @@
+module gFTL2_Complex64@Container@
+  use, intrinsic :: iso_fortran_env, only: REAL64
+
+#define T __COMPLEX64
+#define @Container@ Complex64@Container@
+#include "@container@/template.inc"
+#undef @Container@
+#undef T
+  
+end module gFTL2_Complex64@Container@
+
+module gFTL_Complex64@Container@
+   use gFTL2_Complex64@Container@
+end module gFTL_Complex64@Container@

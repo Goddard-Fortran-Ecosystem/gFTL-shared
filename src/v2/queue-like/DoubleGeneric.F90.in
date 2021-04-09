@@ -1,0 +1,24 @@
+module gFTL2_Double@Container@
+
+#if defined(_DOUBLE_DEFAULT_KIND_IS_REAL64)
+
+  use gFTL2_Real64@Container@, Double@Container@ => Real64@Container@
+
+#elif defined(_REAL_DEFAULT_KIND_IS_REAL128)
+
+  use gFTL2_Real128@Container@, Double@Container@ => Real128@Container@
+
+#else
+
+#  define T __DOUBLE_PRECISION
+#  define @Container@ Double@Container@
+#  include "@container@/template.inc"
+#  undef @Container@
+#  undef T
+
+#endif
+
+end module gFTL2_Double@Container@
+module gFTL_Double@Container@
+   use gFTL2_Double@Container@
+end module gFTL_Double@Container@

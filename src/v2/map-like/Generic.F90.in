@@ -1,0 +1,22 @@
+module gFTL2_@Key_T@@Container@
+   use iso_fortran_env
+#define Key @KEY_TYPE@
+#define T @T_TYPE@
+
+#define @Container@ @Key_T@@Container@
+#define @Container@Iterator @Key_T@@Container@Iterator
+#define Pair @Key_T@Pair
+
+#include "@container@/template.inc"
+
+#undef Pair
+#undef @Container@Iterator
+#undef @Container@
+
+#undef T
+#undef Key
+end module gFTL2_@Key_T@@Container@
+
+module gFTL_@Key_T@@Container@
+   use gFTL2_@Key_T@@Container@
+end module gFTL_@Key_T@@Container@

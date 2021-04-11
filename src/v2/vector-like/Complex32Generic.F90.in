@@ -1,0 +1,19 @@
+module gFTL2_Complex32@Container@
+  use, intrinsic :: iso_fortran_env, only: REAL32
+
+#define T __COMPLEX32
+
+#define @Container@ Complex32@Container@
+#define @Container@Iterator Complex32@Container@Iterator
+#define @Container@RIterator Complex32@Container@RIterator
+#include "@container@/template.inc"
+#undef @Container@RIterator
+#undef @Container@Iterator
+#undef @Container@
+#undef T
+  
+end module gFTL2_Complex32@Container@
+
+module gFTL_Complex32@Container@
+   use gFTL2_Complex32@Container@
+end module gFTL_Complex32@Container@

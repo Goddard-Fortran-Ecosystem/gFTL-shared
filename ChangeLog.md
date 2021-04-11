@@ -5,6 +5,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2021-04-09
+
+### Added
+
+- gFTL-shared now provides 2 sets of containers in libraries
+  `GFTL_SHARED::gftl1-shared` and `GFTL_SHARED::gftl2-shared`.  The
+  legacy `GFTL_SHARED::gftl-shared` currently points to the v1
+  library, but will be updated to v2 when gFTL formally roles out
+  v2.0.
+  
+  Projects can gradually update to the v2 interfaces by using the new
+  module namespace prefixes: "gFTL1" and "gFTL2" respectively and link
+  to both libraries.  Alternatively, a project that wishes to only use
+  one or the other can continue to use the "gFTL" namespace prefix.
+
+
 ## [1.2.0] - 2021-02-06
 
 ### Added

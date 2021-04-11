@@ -1,0 +1,32 @@
+module gFTL2_Double@Container@
+
+#if defined(_DOUBLE_DEFAULT_KIND_IS_REAL64)
+
+  use gFTL2_Real64@Container@, Double@Container@ => Real64@Container@, &
+       & double@Container@Iterator => Real64@Container@Iterator, &
+       & double@Container@RIterator => Real64@Container@RIterator
+
+#elif defined(_REAL_DEFAULT_KIND_IS_REAL128)
+
+  use gFTL2_Real128@Container@, Double@Container@ => Real128@Container@, &
+       & Double@Container@Iterator => Real128@Container@Iterator, &
+       & double@Container@RIterator => Real128@Container@RIterator
+
+#else
+
+#  define T __DOUBLE_PRECISION
+#  define @Container@ Double@Container@
+#  define @Container@Iterator Double@Container@Iterator
+#  define @Container@RIterator Double@Container@RIterator
+#  include "@container@/template.inc"
+#  undef @Container@RIterator
+#  undef @Container@Iterator
+#  undef @Container@
+#  undef T
+
+#endif
+
+end module gFTL2_Double@Container@
+module gFTL_Double@Container@
+   use gFTL2_Double@Container@
+end module gFTL_Double@Container@

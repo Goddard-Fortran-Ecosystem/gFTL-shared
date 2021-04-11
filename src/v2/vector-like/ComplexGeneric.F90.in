@@ -1,0 +1,30 @@
+module gFTL2_Complex@Container@
+
+#if defined(_REAL_DEFAULT_KIND_IS_REAL32)
+
+  use gFTL2_Complex32@Container@, Complex@Container@ => Complex32@Container@, &
+       & Complex@Container@Iterator => Complex32@Container@Iterator
+
+#elif defined(_REAL_DEFAULT_KIND_IS_REAL64)
+
+  use gFTL2_Complex64@Container@, Complex@Container@ => Complex64@Container@, &
+       & Complex@Container@Iterator => Complex64@Container@Iterator
+
+#else
+
+#  define T __COMPLEX
+#  define @Container@ Complex@Container@
+#  define @Container@Iterator Complex@Container@Iterator
+#  define @Container@RIterator Complex@Container@RIterator
+#  include "@container@/template.inc"
+#  undef @Container@RIterator
+#  undef @Container@Iterator
+#  undef @Container@
+#  undef T
+
+#endif
+
+end module gFTL2_Complex@Container@
+module gFTL_Complex@Container@
+   use gFTL2_Complex@Container@
+end module gFTL_Complex@Container@

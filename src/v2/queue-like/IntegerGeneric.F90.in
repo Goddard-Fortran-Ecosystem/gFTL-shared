@@ -1,0 +1,24 @@
+module gFTL2_Integer@Container@
+
+#if defined(_INT_DEFAULT_KIND_IS_INT32)
+
+  use gFTL2_Integer32@Container@, Integer@Container@ => Integer32@Container@
+
+#elif defined(_INT_DEFAULT_KIND_IS_INT64)
+
+  use gFTL2_Integer64@Container@, Integer@Container@ => Integer64@Container@
+
+#else
+
+#  define T __INTEGER
+#  define @Container@ Integer@Container@
+#  include "@container@/template.inc"
+#  undef @Container@
+#  undef T
+
+#endif
+
+end module gFTL2_Integer@Container@
+module gFTL_Integer@Container@
+   use gFTL2_Integer@Container@
+end module gFTL_Integer@Container@

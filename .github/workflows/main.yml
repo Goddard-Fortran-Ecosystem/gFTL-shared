@@ -13,10 +13,6 @@ jobs:
       fail-fast: false
     env:
       FC: ${{ matrix.compiler }}
-      LANGUAGE: en_US.UTF-8
-      LC_ALL: en_US.UTF-8
-      LANG: en_US.UTF-8
-      LC_TYPE: en_US.UTF-8
 
     name: ${{ matrix.os }} / ${{ matrix.compiler }}
     steps:
@@ -40,10 +36,6 @@ jobs:
     container: nvcr.io/nvidia/nvhpc:20.11-devel-cuda11.1-ubuntu20.04
     env:
       FC: nvfortran
-      LANGUAGE: en_US.UTF-8
-      LC_ALL: en_US.UTF-8
-      LANG: en_US.UTF-8
-      LC_TYPE: en_US.UTF-8
 
     name: Nvidia HPC
     steps:

@@ -5,6 +5,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- split v2 source files such that wrapper modules are in a separate file.  This
+  appears to work around a `duplicate symbol` issue that arises under Intel
+  on OS X when linking to v1 and v2 simultaneously.
+
 ## [1.3.0] - 2021-04-09
 
 ### Added

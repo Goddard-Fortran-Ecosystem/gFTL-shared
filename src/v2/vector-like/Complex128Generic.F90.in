@@ -12,7 +12,3 @@ module gFTL2_Complex128@Container@
 #undef T
   
 end module gFTL2_Complex128@Container@
-
-module gFTL_Complex128@Container@
-   use gFTL2_Complex128@Container@
-end module gFTL_Complex128@Container@

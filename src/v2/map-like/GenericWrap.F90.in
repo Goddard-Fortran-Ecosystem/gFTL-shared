@@ -1,0 +1,3 @@
+module gFTL_@Key_T@@Container@
+   use gFTL2_@Key_T@@Container@
+end module gFTL_@Key_T@@Container@

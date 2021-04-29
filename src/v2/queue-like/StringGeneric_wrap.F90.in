@@ -1,0 +1,3 @@
+module gFTL_String@Container@
+   use gFTL2_String@Container@
+end module gFTL_String@Container@

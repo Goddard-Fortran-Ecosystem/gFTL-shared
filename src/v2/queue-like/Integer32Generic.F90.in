@@ -8,7 +8,3 @@ module gFTL2_Integer32@Container@
 #undef T
   
 end module gFTL2_Integer32@Container@
-
-module gFTL_Integer32@Container@
-   use gFTL2_Integer32@Container@
-end module gFTL_Integer32@Container@

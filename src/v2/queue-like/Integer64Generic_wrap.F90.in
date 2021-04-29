@@ -1,0 +1,3 @@
+module gFTL_Integer64@Container@
+   use gFTL2_Integer64@Container@
+end module gFTL_Integer64@Container@

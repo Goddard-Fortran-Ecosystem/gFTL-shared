@@ -27,6 +27,3 @@ module gFTL2_Real@Container@
 #endif
 
 end module gFTL2_Real@Container@
-module gFTL_Real@Container@
-   use gFTL2_Real@Container@
-end module gFTL_Real@Container@

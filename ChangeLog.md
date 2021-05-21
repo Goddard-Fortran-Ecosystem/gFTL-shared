@@ -5,6 +5,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## Changed
+- Results from running trial sources during CMake config are now stored in the CMake cache
+
 ## [1.3.6] - 2021-11-16
 
 ### Fixed

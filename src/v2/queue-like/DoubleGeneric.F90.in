@@ -19,6 +19,3 @@ module gFTL2_Double@Container@
 #endif
 
 end module gFTL2_Double@Container@
-module gFTL_Double@Container@
-   use gFTL2_Double@Container@
-end module gFTL_Double@Container@

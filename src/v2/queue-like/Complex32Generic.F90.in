@@ -9,7 +9,3 @@ module gFTL2_Complex32@Container@
 #undef T
   
 end module gFTL2_Complex32@Container@
-
-module gFTL_Complex32@Container@
-   use gFTL2_Complex32@Container@
-end module gFTL_Complex32@Container@

@@ -1,0 +1,3 @@
+module gFTL_Real@Container@
+   use gFTL2_Real@Container@
+end module gFTL_Real@Container@

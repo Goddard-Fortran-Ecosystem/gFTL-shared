@@ -19,6 +19,3 @@ module gFTL2_Complex@Container@
 #endif
 
 end module gFTL2_Complex@Container@
-module gFTL_Complex@Container@
-   use gFTL2_Complex@Container@
-end module gFTL_Complex@Container@

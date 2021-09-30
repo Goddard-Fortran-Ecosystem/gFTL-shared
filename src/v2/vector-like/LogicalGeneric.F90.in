@@ -11,7 +11,3 @@ module gFTL2_Logical@Container@
 #undef T
   
 end module gFTL2_Logical@Container@
-
-module gFTL_Logical@Container@
-   use gFTL2_Logical@Container@
-end module gFTL_Logical@Container@

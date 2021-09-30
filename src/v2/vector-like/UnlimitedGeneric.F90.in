@@ -11,7 +11,3 @@ module gFTL2_Unlimited@Container@
 #undef T
   
 end module gFTL2_Unlimited@Container@
-
-module gFTL_Unlimited@Container@
-   use gFTL2_Unlimited@Container@
-end module gFTL_Unlimited@Container@

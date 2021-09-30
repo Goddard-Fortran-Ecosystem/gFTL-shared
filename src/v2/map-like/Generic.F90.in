@@ -16,7 +16,3 @@ module gFTL2_@Key_T@@Container@
 #undef T
 #undef Key
 end module gFTL2_@Key_T@@Container@
-
-module gFTL_@Key_T@@Container@
-   use gFTL2_@Key_T@@Container@
-end module gFTL_@Key_T@@Container@

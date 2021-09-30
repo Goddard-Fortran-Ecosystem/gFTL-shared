@@ -5,6 +5,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.2] - 2021-09-30
+
+Mistake in last change not caught because of skipping
+make clean.
+
+
 ## [1.3.1] - 2021-09-30
 
 Workaround for ifort duplicate symbols in modules.

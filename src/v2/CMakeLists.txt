@@ -51,6 +51,8 @@ foreach (T ${T_types})
 
 endforeach ()
 
+target_link_libraries(${v2-default} PUBLIC gftl-shared-v2)
+
 # Only ordered types can be used in set
 foreach (T ${T_types_ordered})
   foreach (Container Set)

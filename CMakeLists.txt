@@ -12,7 +12,7 @@ cmake_minimum_required(VERSION 3.0)
 # the library gftl-shared retain the hyphen (and lower case)
 
 project (GFTL_SHARED
-  VERSION 1.3.1
+  VERSION 1.3.2
   LANGUAGES Fortran)
 
 

@@ -1,8 +1,11 @@
 set(CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/mod)
+set (v2-default gftl-shared-v2-as-default)
 add_library(gftl-shared-v2)
+add_library(${v2-default})
 
 # For internal builds
 add_library(GFTL_SHARED::gftl-shared-v2 ALIAS gftl-shared-v2)
+add_library(GFTL_SHARED::gftl-shared-v2-as-default ALIAS ${v2-default})
 
 set (T_types_ordered
   Integer32 Integer64 Integer
@@ -35,7 +38,7 @@ foreach (T ${T_types})
     configure_file(vector-like/${T}Generic_wrap.F90.in ${container}/${T}${Container}_wrap.F90 @ONLY)
     configure_file(vector-like/${T}Generic.F90.in  ${container}/${T}${Container}.F90 @ONLY)
     target_sources (gftl-shared-v2 PRIVATE vector/${T}${Container}.F90)
-    target_sources (gftl-shared-v2 PRIVATE vector/${T}${Container}_wrap.F90)
+    target_sources (${v2-default} PRIVATE vector/${T}${Container}_wrap.F90)
   endforeach ()
   
   foreach (Container Queue Stack Deque)
@@ -43,7 +46,7 @@ foreach (T ${T_types})
     configure_file(queue-like/${T}Generic_wrap.F90.in ${container}/${T}${Container}_wrap.F90 @ONLY)
     configure_file(queue-like/${T}Generic.F90.in  ${container}/${T}${Container}.F90 @ONLY)
     target_sources (gftl-shared-v2 PRIVATE ${container}/${T}${Container}.F90)
-    target_sources (gftl-shared-v2 PRIVATE ${container}/${T}${Container}_wrap.F90)
+    target_sources (${v2-default} PRIVATE ${container}/${T}${Container}_wrap.F90)
   endforeach ()
 
 endforeach ()
@@ -55,7 +58,7 @@ foreach (T ${T_types_ordered})
     configure_file(queue-like/${T}Generic_wrap.F90.in  ${container}/${T}${Container}_wrap.F90 @ONLY)
     configure_file(queue-like/${T}Generic.F90.in  ${container}/${T}${Container}.F90 @ONLY)
     target_sources (gftl-shared-v2 PRIVATE ${container}/${T}${Container}.F90)
-    target_sources (gftl-shared-v2 PRIVATE ${container}/${T}${Container}_wrap.F90)
+    target_sources (${v2-default} PRIVATE ${container}/${T}${Container}_wrap.F90)
   endforeach ()
 endforeach()
 
@@ -93,7 +96,7 @@ foreach (Key ${Key_types})
       configure_file(map-like/Generic.F90.in  ${container}/${Key_T}${Container}.F90 @ONLY)
       configure_file(map-like/GenericWrap.F90.in  ${container}/${Key_T}${Container}_wrap.F90 @ONLY)
       target_sources (gftl-shared-v2 PRIVATE ${container}/${Key_T}${Container}.F90)
-      target_sources (gftl-shared-v2 PRIVATE ${container}/${Key_T}${Container}_wrap.F90)
+      target_sources (${v2-default} PRIVATE ${container}/${Key_T}${Container}_wrap.F90)
     endforeach ()
   endforeach ()
 endforeach ()

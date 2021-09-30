@@ -10,8 +10,9 @@ cmake_minimum_required(VERSION 3.0)
 # Names/paths that are derived from the CMake project will all have
 # "GFTL_SHARED" as their base name (and all caps).  Targets such as
 # the library gftl-shared retain the hyphen (and lower case)
+
 project (GFTL_SHARED
-  VERSION 1.3.0
+  VERSION 1.3.1
   LANGUAGES Fortran)
 
 

@@ -5,11 +5,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.1] - 2021-09-30
+
+Workaround for ifort duplicate symbols in modules.
+
 ### Changed
 
-- split v2 source files such that wrapper modules are in a separate file.  This
-  appears to work around a `duplicate symbol` issue that arises under Intel
-  on OS X when linking to v1 and v2 simultaneously.
+- split v2 source files such that wrapper modules are in a separate
+  library.  This appears to work around a `duplicate symbol` issue
+  that arises under Intel on OS X when linking to v1 and v2
+  simultaneously.  Users that want v2 as the default should link with
+  `GFTL-SHARED::gftl-shared-v2-as-default` rather than
+  `GFTL-SHARED::gftl-shared`.
+  
+- Updated gFTL submodule to v1.5.1.
 
 ## [1.3.0] - 2021-04-09
 

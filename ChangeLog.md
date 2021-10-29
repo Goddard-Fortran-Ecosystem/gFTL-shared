@@ -5,6 +5,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Added support for compiling on Windows with Intel compiler.
+
 ## [1.3.3] - 2021-10-27
 
 ### Changed

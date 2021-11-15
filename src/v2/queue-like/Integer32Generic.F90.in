@@ -1,10 +1,13 @@
 module gFTL2_Integer32@Container@
   use, intrinsic :: iso_fortran_env, only: INT32
 
+#define __DEBUG__
 #define T __INTEGER32
 #define @Container@ Integer32@Container@
+#define @Container@Iterator Integer32@Container@Iterator
 #include "@container@/template.inc"
 #undef @Container@
+#undef @Container@Iterator
 #undef T
   
 end module gFTL2_Integer32@Container@

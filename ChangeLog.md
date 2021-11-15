@@ -8,8 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.3.5] - 2021-11-15
 
 ### Fixed
+- Missing public interfaces for Set containers
 - Extended line length for gFortran
-- Missing publict interfaces for Set containers
 - Incorrect path in CMake logic.  Only affected internal
   builds for subsequently deleted executable targets.
 

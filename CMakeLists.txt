@@ -46,9 +46,6 @@ write_basic_package_version_file(GFTL_SHAREDConfig-version.cmake
   COMPATIBILITY SameMajorVersion
   )
 
-add_executable(time_set.x time_set.F90)
-target_link_libraries(time_set.x gftl-shared-v2 gftl-shared-v1)
-
 set (top_dir GFTL_SHARED-${GFTL_SHARED_VERSION_MAJOR}.${GFTL_SHARED_VERSION_MINOR})
 install (
   FILES ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHAREDConfig.cmake ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHAREDConfig-version.cmake

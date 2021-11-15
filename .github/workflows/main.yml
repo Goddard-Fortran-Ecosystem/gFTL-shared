@@ -1,6 +1,13 @@
 name: CI Tests
 
-on: [push, pull_request]
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    # Do not run if the only files changed cannot affect the build
+    paths-ignore:
+      - "**.md"
+      - "**.MD"
+      - "LICENSE"
 
 jobs:
   GNU:
@@ -14,16 +21,20 @@ jobs:
             compiler: gfortran-8
           - os: macos-11
             compiler: gfortran-8
-
-        os: [ubuntu-20.04, macos-10.15]
-        compiler: [gfortran-9, gfortran-10]
-
       fail-fast: false
     env:
       FC: ${{ matrix.compiler }}
 
     name: ${{ matrix.os }} / ${{ matrix.compiler }}
     steps:
+      - name: Install GCC 8 on Ubuntu 20
+        if: matrix.os == 'ubuntu-20.04' && matrix.compiler == 'gfortran-8'
+        run: |
+          sudo apt-get install gfortran-8 -y
+      - name: Install GCC 11 on Ubuntu 20
+        if: matrix.os == 'ubuntu-20.04' && matrix.compiler == 'gfortran-11'
+        run: |
+          sudo apt-get install gfortran-11 -y
       - name: Versions
         run: |
           ${FC} --version

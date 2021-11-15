@@ -2,11 +2,17 @@ module gFTL2_DoubleComplex@Container@
 
 #if defined(_DOUBLE_DEFAULT_KIND_IS_REAL64)
 
-  use gFTL2_Complex64@Container@, DoubleComplex@Container@ => Complex64@Container@
+  use gFTL2_Complex64@Container@, only: DoubleComplex@Container@ => Complex64@Container@
+#  if defined(HAS_ITERATOR)
+  use gFTL2_Complex64@Container@, only: DoubleComplex@Container@Iterator => Complex64@Container@Iterator
+#  endif
 
 #elif defined(_REAL_DEFAULT_KIND_IS_REAL128)
 
-  use gFTL2_Complex128@Container@, DoubleComplex@Container@ => Complex128@Container@
+  use gFTL2_Complex128@Container@, only: DoubleComplex@Container@ => Complex128@Container@
+#  if defined(HAS_ITERATOR)
+  use gFTL2_Complex128@Container@, only: DoubleComplex@Container@Iterator => Complex128@Container@Iterator
+#  endif
 
 #else
 

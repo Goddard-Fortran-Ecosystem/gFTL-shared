@@ -2,11 +2,17 @@ module gFTL2_Integer@Container@
 
 #if defined(_INT_DEFAULT_KIND_IS_INT32)
 
-  use gFTL2_Integer32@Container@, Integer@Container@ => Integer32@Container@
+  use gFTL2_Integer32@Container@, only: Integer@Container@ => Integer32@Container@
+#  if defined(HAS_ITERATOR)
+  use gFTL2_Integer32@Container@, only: Integer@Container@Iterator => Integer32@Container@Iterator
+#  endif
 
 #elif defined(_INT_DEFAULT_KIND_IS_INT64)
 
-  use gFTL2_Integer64@Container@, Integer@Container@ => Integer64@Container@
+  use gFTL2_Integer64@Container@, only: Integer@Container@ => Integer64@Container@
+#  if defined(HAS_ITERATOR)
+  use gFTL2_Integer64@Container@, only: Integer@Container@Iterator => Integer64@Container@Iterator
+#  endif
 
 #else
 

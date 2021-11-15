@@ -61,6 +61,7 @@ foreach (T ${T_types_ordered})
     configure_file(queue-like/${T}Generic.F90.in  ${container}/${T}${Container}.F90 @ONLY)
     target_sources (gftl-shared-v2 PRIVATE ${container}/${T}${Container}.F90)
     target_sources (${v2-default} PRIVATE ${container}/${T}${Container}_wrap.F90)
+    set_property(SOURCE ${T}${Container}.F90  PROPERTY COMPILE_DEFINITIONS HAS_ITERATOR)
   endforeach ()
 endforeach()
 
@@ -133,7 +134,7 @@ endif()
 set (dest "GFTL_SHARED-${GFTL_SHARED_VERSION_MAJOR}.${GFTL_SHARED_VERSION_MINOR}")
 
 target_include_directories (gftl-shared-v2 PUBLIC
-  $<BUILD_INTERFACE:${GFTL_SHARED_BINARY_DIR}/mod/v2>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/mod>
   $<INSTALL_INTERFACE:${dest}/include/v2>
   )
 

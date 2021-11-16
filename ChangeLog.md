@@ -5,6 +5,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.6] - 2021-11-16
+
+### Fixed
+
+- eliminates some compiler warnings from gFTL submodule
+
 ## [1.3.5] - 2021-11-15
 
 ### Fixed

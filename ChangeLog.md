@@ -5,6 +5,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add `NVHPC.cmake` file for NVHPC support
+
 ## [1.3.6] - 2021-11-16
 
 ### Fixed

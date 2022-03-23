@@ -5,15 +5,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.1] - 2022-03-23
+
+### Changed
+
+- Updated gFTL submodule to v1.6.0
+
 ## [1.4.0] - 2022-03-23
 
 ### Added
 
 - Add `NVHPC.cmake` file for NVHPC support
 
-### Changed
-
-- Updated gFTL submodule to v1.6.0
 
 ## [1.3.6] - 2021-11-16
 

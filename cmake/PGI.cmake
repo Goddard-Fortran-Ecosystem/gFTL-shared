@@ -1,5 +1,4 @@
 # Compiler specific flags for PGI Fortran compiler
-# (or is this now NVIDIA?)
 
 set(traceback "-traceback")
 if( CMAKE_Fortran_COMPILER_VERSION VERSION_GREATER_EQUAL 20.11 )

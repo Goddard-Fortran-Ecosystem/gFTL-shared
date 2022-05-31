@@ -5,12 +5,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.0] - 2022-05-31
+
 ### Fixed
 
 - Fix use of `-Od` flag with Intel on non-Windows machines
 
 ### Changed
 
+- NAG compiler flags - to reduce useless warning messages.
+- Updated gFTL submodule to v1.8.0
 - Updated GitHub Actions
   - OSs
     - Remove macos-10.15

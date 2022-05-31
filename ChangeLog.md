@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fix use of `-Od` flag with Intel on non-Windows machines
 
+### Changed
+
+- Updated GitHub Actions
+  - OSs
+    - Remove macos-10.15
+    - Add ubuntu-22.04 and macos-12
+  - Compilers
+   - Removed gfortran-8
+   - Added gfortran-11
+   - Added gfortran-12 (for ubuntu-22.04)
+
 ## [1.4.1] - 2022-03-23
 
 ### Changed

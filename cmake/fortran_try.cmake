@@ -1,57 +1,52 @@
-macro (CHECK_FORTRAN_SOURCE_RUN file var)
 
-  try_run (
-    run compile
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${file}
-    CMAKE_FLAGS "-DCOMPILE_DEFINITIONS=${CMAKE_REQUIRED_DEFINITIONS}"
-    RUN_OUTPUT_VARIABLE ${var}
-    )
+macro (CHECK_Fortran_SOURCE_RUN file var)
 
-  # Successful runs return "0", which is opposite of CMake sense of "if":
-  if (NOT run)
-    string(STRIP ${${var}} ${var})
-    if (NOT CMAKE_REQUIRED_QUIET)
-      message(STATUS "Performing Test ${var}: SUCCESS (value=${${var}})")
-    endif ()
-    
-    add_definitions(-D${var}=${${var}})
-    
-  else ()
-    
-    if (NOT CMAKE_REQUIRED_QUIET)
-      message(STATUS "Performing Test ${var}: FAILURE")
-    endif ()
-    
+  # Wrapper to check_fortran_source_runs to add a compiler definition on success
+  # See https://cmake.org/cmake/help/latest/module/CheckFortranSourceRuns.html
+
+  include(CheckFortranSourceRuns)
+
+  file(READ ${file} source)  
+  # message(${source})
+
+  check_fortran_source_runs(
+    ${source}
+    # "character :: b; b = 'a'; end"
+    ${var}
+    SRC_EXT F90
+  )
+
+  # Note the double brackets, ${ ${ } }, below. This evaluates the contents
+  # of the variable. A single bracket also works in an if-statement, but
+  # to print the contents use `message(${${var}})`.
+  if (${${var}})
+    add_definitions(-D${var})
   endif ()
 
-endmacro (CHECK_FORTRAN_SOURCE_RUN)
+endmacro ()
 
 
-macro (CHECK_FORTRAN_SOURCE_COMPILE file var)
+macro (CHECK_Fortran_SOURCE_COMPILE file var)
+  include(CheckFortranSourceCompiles)
 
-  try_compile (
-    code_compiles
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${file}
-    CMAKE_FLAGS "-DCOMPILE_DEFINITIONS=${CMAKE_REQUIRED_DEFINITIONS}"
-    )
+  # Wrapper to check_fortran_source_compiles to add a compiler definition on success
+  # See https://cmake.org/cmake/help/latest/module/CheckFortranSourceCompiles.html
 
-  if (${code_compiles})
+  include(CheckFortranSourceCompiles)
 
-    set(${var} SUCCESS)
-    if (NOT CMAKE_REQUIRED_QUIET)
-      message (STATUS "Performing Test ${var}: SUCCESS")
-    endif ()
+  file(READ ${file} source)  
 
+  check_fortran_source_compiles(
+    ${source}
+    ${var}
+    SRC_EXT F90
+  )
+
+  # Note the double brackets, ${ ${ } }, below. This evaluates the contents
+  # of the variable. A single bracket also works in an if-statement, but
+  # to print the contents use `message(${${var}})`.
+  if (${${var}})
     add_definitions(-D${var})
+  endif ()
 
-  else ()
-
-      if (NOT CMAKE_REQUIRED_QUIET)
-	message (STATUS "Performing Test ${var}: BUILD FAILURE")
-      endif ()
-
-  endif()
-
-endmacro (CHECK_FORTRAN_SOURCE_COMPILE)
+endmacro ()

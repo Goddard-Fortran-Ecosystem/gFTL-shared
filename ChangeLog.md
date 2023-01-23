@@ -5,6 +5,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.1] - 2023-01-23
+
+### Fixed
+
+- Fixes for GNU Make builds
+- Update gFTL submodule to v1.8.2
+
 ## [1.5.0] - 2022-05-31
 
 ### Fixed

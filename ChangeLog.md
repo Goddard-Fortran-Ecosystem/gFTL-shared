@@ -5,9 +5,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.6.0] - 2023-04-13
+
 ### Added
 
 - Added `IntelLLVM.cmake` file as a copy of `Intel.cmake` to support the LLVM Intel compiler frontends
+
+### Changed
+
+- Updated gFTL submodule to v1.10.0
+
+## [1.5.1] - 2023-01-23
+
+### Fixed
+
+- Fixes for GNU Make builds
+- Update gFTL submodule to v1.8.2
 
 ## [1.5.0] - 2022-05-31
 

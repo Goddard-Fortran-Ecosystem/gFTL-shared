@@ -24,13 +24,11 @@ jobs:
           - os: ubuntu-22.04
             compiler: gfortran-9
           - os: macos-11
-            compiler: gfortran-12
+            compiler: gfortran-9
           - os: macos-12
             compiler: gfortran-9
           - os: macos-12
             compiler: gfortran-10
-          - os: macos-12
-            compiler: gfortran-12
 
       # fail-fast if set to 'true' here is good for production, but when
       # debugging, set to 'false'. fail-fast means if *any* ci test in the matrix fails
@@ -60,7 +58,7 @@ jobs:
           ${FC} --version
           cmake --version
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 1
       - name: Build gFTL-shared
@@ -70,7 +68,50 @@ jobs:
           cmake .. -DCMAKE_Fortran_COMPILER=${FC}
           make -j$(nproc)
       - name: Archive log files on failure
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: logfiles
+          path: |
+            build/**/*.log
+
+
+  Intel:
+    runs-on: ubuntu-20.04
+
+    env:
+      FC: ifort
+      CC: icc
+
+    name: Intel Fortran
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Intel compilers
+        run: |
+          cd /tmp
+          wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+          sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+          rm GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+          sudo add-apt-repository "deb https://apt.repos.intel.com/oneapi all main"
+          sudo apt install --no-install-recommends intel-oneapi-compiler-fortran intel-oneapi-mpi \
+            intel-oneapi-compiler-dpcpp-cpp-and-cpp-classic intel-oneapi-mpi-devel
+          source /opt/intel/oneapi/setvars.sh
+          printenv >> $GITHUB_ENV
+      - name: Versions
+        run: |
+          ${FC} --version
+          ${CC} --version
+          mpirun --version
+          cmake --version
+      - name: Build gFTL-shared
+        run: |
+          mkdir -p build
+          cd build
+          cmake .. -DCMAKE_Fortran_COMPILER=${FC}
+          make -j$(nproc)
+      - name: Archive log files on failure
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: logfiles
@@ -80,7 +121,7 @@ jobs:
 
   Nvidia:
     runs-on: ubuntu-20.04
-    container: nvcr.io/nvidia/nvhpc:20.11-devel-cuda11.1-ubuntu20.04
+    container: nvcr.io/nvidia/nvhpc:23.3-devel-cuda12.0-ubuntu20.04
     env:
       FC: nvfortran
 

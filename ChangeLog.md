@@ -5,13 +5,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## Fixed
+
+- Updated CI
+  - Fix NVIDIA CI
+  - Add Intel
+  - Remove gcc 9 from macos
+
+### Added
+
+- Added changelog enforcer
+
 ## [1.6.1] - 2023-07-18
 
 ### Fixed
 
 - Fixed issue where the names of some iterators for containers were not being correctly named.  E.g., StringSetIterator was only named SetIterator.
 
-### Added
 ## [1.6.0] - 2023-04-13
 
 ### Added

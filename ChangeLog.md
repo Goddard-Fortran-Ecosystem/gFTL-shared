@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fujitsu compiler support
 
+## Changed
+- Results from running trial sources during CMake config are now stored in the CMake cache
+
 ## [1.7.0] - 2023-11-29
 
 ### Fixed
@@ -73,7 +76,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add `NVHPC.cmake` file for NVHPC support
-
 
 ## [1.3.6] - 2021-11-16
 

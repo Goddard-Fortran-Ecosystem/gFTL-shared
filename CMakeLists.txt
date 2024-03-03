@@ -12,7 +12,7 @@ cmake_minimum_required(VERSION 3.0)
 # the library gftl-shared retain the hyphen (and lower case)
 
 project (GFTL_SHARED
-  VERSION 1.3.6
+  VERSION 1.7.0
   LANGUAGES Fortran)
 
 
@@ -35,7 +35,17 @@ set(CMAKE_MODULE_PATH "${GFTL_SHARED_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 include(${CMAKE_Fortran_COMPILER_ID} RESULT_VARIABLE found)
 include(check_intrinsic_kinds RESULT_VARIABLE found)
 
+# We attempt to use find_package() first for each dependency.  But all
+# dependencies are also available as submodules.
+include(build_submodule)
+build_submodule(extern/gFTL PROJECT GFTL TARGET GFTL::gftl)
+
 add_subdirectory (src)
+
+# The following is needed for external projects using *nix make when
+# parent project builds gFTL-shared as a subproject.
+set (top_dir GFTL_SHARED-${GFTL_SHARED_VERSION_MAJOR}.${GFTL_SHARED_VERSION_MINOR})
+set (GFTL_SHARED_TOP_DIR "${CMAKE_INSTALL_PREFIX}/${top_dir}" CACHE PATH "")
 
 include(CMakePackageConfigHelpers)
 configure_package_config_file(GFTL_SHAREDConfig.cmake.in GFTL_SHAREDConfig.cmake
@@ -46,14 +56,10 @@ write_basic_package_version_file(GFTL_SHAREDConfig-version.cmake
   COMPATIBILITY SameMajorVersion
   )
 
-set (top_dir GFTL_SHARED-${GFTL_SHARED_VERSION_MAJOR}.${GFTL_SHARED_VERSION_MINOR})
 install (
   FILES ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHAREDConfig.cmake ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHAREDConfig-version.cmake
   DESTINATION "${top_dir}/cmake")
 
-# The following is needed for external projects using *nix make when
-# parent project builds gFTL-shared as a subproject.
-set (GFTL_SHARED_TOP_DIR "${CMAKE_INSTALL_PREFIX}/${top_dir}" CACHE PATH "")
 configure_file (GFTL_SHARED.mk.in ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHARED.mk @ONLY)
 install (
   FILES ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHARED.mk ${CMAKE_CURRENT_BINARY_DIR}/GFTL_SHARED.mk

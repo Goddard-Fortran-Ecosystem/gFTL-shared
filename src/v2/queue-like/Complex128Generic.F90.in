@@ -3,8 +3,14 @@ module gFTL2_Complex128@Container@
 
 #define T __COMPLEX128
 #define @Container@ Complex128@Container@
+#if defined(HAS_ITERATOR)
+#  define @Container@Iterator Complex128@Container@Iterator
+#endif
 #include "@container@/template.inc"
 #undef @Container@
+#if defined(HAS_ITERATOR)
+#  undef @Container@Iterator
+#endif
 #undef T
   
 end module gFTL2_Complex128@Container@

@@ -5,8 +5,77 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Fujitsu compiler support
+
 ## Changed
 - Results from running trial sources during CMake config are now stored in the CMake cache
+
+## [1.7.0] - 2023-11-29
+
+### Fixed
+
+- Add `-check nouninit` for Intel LLVM to work around [`ifx` bug](https://github.com/HPC-Bugs/reproducers/tree/main/compiler/Fortran/ifx/allocatable).
+
+### Changed
+
+- Updated gFTL submodule to v1.11.0
+
+## [1.6.1] - 2023-07-18
+
+### Fixed
+
+- Fixed issue where the names of some iterators for containers were not being correctly named.  E.g., StringSetIterator was only named SetIterator.
+
+### Added
+## [1.6.0] - 2023-04-13
+
+### Added
+
+- Added `IntelLLVM.cmake` file as a copy of `Intel.cmake` to support the LLVM Intel compiler frontends
+
+### Changed
+
+- Updated gFTL submodule to v1.10.0
+
+## [1.5.1] - 2023-01-23
+
+### Fixed
+
+- Fixes for GNU Make builds
+- Update gFTL submodule to v1.8.2
+
+## [1.5.0] - 2022-05-31
+
+### Fixed
+
+- Fix use of `-Od` flag with Intel on non-Windows machines
+
+### Changed
+
+- NAG compiler flags - to reduce useless warning messages.
+- Updated gFTL submodule to v1.8.0
+- Updated GitHub Actions
+  - OSs
+    - Remove macos-10.15
+    - Add ubuntu-22.04 and macos-12
+  - Compilers
+   - Removed gfortran-8
+   - Added gfortran-11
+   - Added gfortran-12 (for ubuntu-22.04)
+
+## [1.4.1] - 2022-03-23
+
+### Changed
+
+- Updated gFTL submodule to v1.6.0
+
+## [1.4.0] - 2022-03-23
+
+### Added
+
+- Add `NVHPC.cmake` file for NVHPC support
 
 ## [1.3.6] - 2021-11-16
 

@@ -5,12 +5,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.8.0] - 2024-03-03
+
 ### Added
 
 - Fujitsu compiler support
 
 ## Changed
+
 - Results from running trial sources during CMake config are now stored in the CMake cache
+- Updated gFTL submodule to v1.12.0
 
 ## [1.7.0] - 2023-11-29
 

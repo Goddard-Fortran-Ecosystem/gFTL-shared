@@ -1,4 +1,4 @@
-include (fortran_try)
+include (CheckFortranSource)
 
 CHECK_Fortran_SOURCE_RUN (
   ${CMAKE_CURRENT_LIST_DIR}/trial_sources/LOGICAL_DEFAULT_KIND.F90

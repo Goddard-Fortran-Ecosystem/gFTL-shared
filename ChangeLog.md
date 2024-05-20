@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Added gftl-shared-v2-as-default to install list
 - Added `-quiet` flag for NAG Fortran
 - Remove `macos-11` from GitHub Actions, add `macos-12`
 - Add Ubuntu 24 to CI that has `gfortran-13`. Remove `gfortran-13` test from ubuntu 22

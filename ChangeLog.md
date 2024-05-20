@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added `-quiet` flag for NAG Fortran
 - Remove `macos-11` from GitHub Actions, add `macos-12`
+- Moved CI to use Ubuntu 24 as that has `gfortran-13`
 
 ## [1.8.0] - 2024-03-03
 

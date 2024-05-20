@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remove `macos-11` and `macos-12` from GitHub Actions, move to use `macos-13` and `macos-14`
 - Add Ubuntu 24 to CI that has `gfortran-13`. Remove `gfortran-13` test from ubuntu 22
 
+### Added
+
+- LLVMFlang compiler support
+
 ## [1.8.0] - 2024-03-03
 
 ### Added

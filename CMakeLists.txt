@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.12)
 
 # Note: the CMake project name is spelled slightly different than the
 # git project.  This is to allow superprojects to use an environment

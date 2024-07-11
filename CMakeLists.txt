@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.12)
 
 # Note: the CMake project name is spelled slightly different than the
 # git project.  This is to allow superprojects to use an environment
@@ -12,7 +12,7 @@ cmake_minimum_required(VERSION 3.0)
 # the library gftl-shared retain the hyphen (and lower case)
 
 project (GFTL_SHARED
-  VERSION 1.8.0
+  VERSION 1.9.0
   LANGUAGES Fortran)
 
 

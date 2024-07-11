@@ -154,3 +154,4 @@ target_link_libraries (gftl-shared-v2 PUBLIC GFTL::gftl-v2)
 
 install (DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/mod/ DESTINATION ${dest}/include/v2)
 install (TARGETS gftl-shared-v2 EXPORT GFTL_SHARED DESTINATION "${dest}/lib")
+install (TARGETS ${v2-default} EXPORT GFTL_SHARED DESTINATION "${dest}/lib")

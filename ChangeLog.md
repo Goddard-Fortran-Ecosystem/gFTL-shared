@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added 
 
-- support for llvm flang
+- LLVMFlang compiler support
 
 ## [1.9.0] - 2024-07-09
 
@@ -19,11 +19,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated gFTL to v1.14.0
 - Add Ubuntu 24 to CI that has `gfortran-13`. Remove `gfortran-13` test from ubuntu 22, add `gfortran-14`
 - Up `cmake_minimum_required`
-
-
-### Added
-
-- LLVMFlang compiler support
 
 ## [1.8.0] - 2024-03-03
 

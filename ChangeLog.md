@@ -5,12 +5,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Preliminary LFortran support
+
+## [1.10.0] - 2025-01-31
+
 ### Added 
 
 - LLVMFlang compiler support
 
 ### Changed
 
+- Updated gFTL to v1.15.0
 - Update CI to have `gfortran-10` and `gfortran-11` only on `ubuntu-22.04`
 - Update CI NVIDIA to NVHPC 24.7
 - Add Flang to CI

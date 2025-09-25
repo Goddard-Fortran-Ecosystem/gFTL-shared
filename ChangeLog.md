@@ -7,8 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Remove `macos-13` from CI, add `macos-15`
+- Add `gfortran-15` to macOS CI
 - Update CMake minimum version to 3.24
-- Update CI to use `macos-15`, remove `macos-13`
 
 ## [1.10.0] - 2025-01-31
 

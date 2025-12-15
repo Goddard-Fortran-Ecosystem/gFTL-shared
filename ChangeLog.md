@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Preliminary LFortran support
 
+## [1.11.0] - 2025-09-29
+
+### Changed
+
+- Updated gFTL to v1.16.0
+- Remove `macos-13` from CI, add `macos-15`
+- Add `gfortran-15` to macOS CI
+- Update CMake minimum version to 3.24
+
 ## [1.10.0] - 2025-01-31
 
 ### Added 

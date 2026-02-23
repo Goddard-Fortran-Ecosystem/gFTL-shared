@@ -5,8 +5,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.12.0] - 2026-02-23
+
 ### Changed
 
+- Updated gFTL to v1.17.0
 - Remove `gfortran-12` from macos runners, clean up CI
 
 ## [1.11.0] - 2025-09-29

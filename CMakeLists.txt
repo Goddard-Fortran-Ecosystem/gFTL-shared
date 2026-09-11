@@ -33,6 +33,9 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 set(CMAKE_MODULE_PATH "${GFTL_SHARED_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 include(${CMAKE_Fortran_COMPILER_ID} RESULT_VARIABLE found)
+if (WIN32)
+  add_compile_definitions(_WIN32)
+endif()
 include(check_intrinsic_kinds RESULT_VARIABLE found)
 
 # We attempt to use find_package() first for each dependency.  But all

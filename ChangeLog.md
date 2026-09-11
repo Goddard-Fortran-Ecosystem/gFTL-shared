@@ -5,6 +5,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Windows CI workflow for MinGW `gfortran` and Intel `ifx`
+
 ### Changed
 
 - Update CI to match build matrix of GFE
